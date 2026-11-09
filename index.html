@@ -1,92 +1,1664 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reto Inocuidad · Heaven Food</title><style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Segoe UI,Roboto,Arial,sans-serif}
-body{color:#e2e8f0;background:linear-gradient(160deg,#0f172a,#1e293b);min-height:100vh;padding:16px}
-.b{max-width:600px;margin:0 auto}
-.c{background:#1e293b;border:1px solid #334155;border-radius:16px;padding:22px;box-shadow:0 12px 40px rgba(0,0,0,.4)}
-.s{display:none}.s.on{display:block}
-h1{font-size:26px;text-align:center}.m{color:#94a3b8;text-align:center;font-size:13px;margin-top:3px}
-.lg{width:108px;height:108px;display:block;margin:0 auto 6px}
-.in{color:#cbd5e1;text-align:center;font-size:14px;line-height:1.5;margin:14px 0}
-label{font-size:13px;color:#94a3b8;font-weight:600;display:block;margin:10px 0 4px}
-input{width:100%;padding:12px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:16px}
-.bt{border:none;cursor:pointer;font-weight:700;font-size:16px;padding:14px;border-radius:12px;width:100%;margin-top:12px;color:#04210f;background:linear-gradient(135deg,#22c55e,#16a34a)}
-.bg{background:#334155;color:#cbd5e1}
-.h{display:flex;justify-content:space-between;font-size:13px;color:#94a3b8;margin-bottom:8px}
-.p{font-weight:800;padding:4px 10px;border-radius:99px;font-size:13px;background:rgba(234,179,8,.18);color:#fde047}
-.bar{height:7px;background:#0f172a;border-radius:99px;overflow:hidden;margin-bottom:14px}.bar>i{display:block;height:100%;width:0;background:#22c55e;transition:.5s}
-.lv{font-size:11px;font-weight:800;padding:4px 9px;border-radius:6px;color:#fff;background:#2563eb;text-transform:uppercase;margin-bottom:12px;display:inline-block}
-.q{font-size:18px;line-height:1.4;margin-bottom:14px}
-.o{display:block;width:100%;text-align:left;background:#0f172a;border:2px solid #334155;color:#e2e8f0;padding:12px 14px;border-radius:11px;cursor:pointer;font-size:15px;margin-bottom:8px}
-.o.ok{border-color:#22c55e;background:rgba(34,197,94,.2)}.o.no{border-color:#ef4444;background:rgba(239,68,68,.18)}
-.f{margin-top:12px;border-radius:12px;padding:13px;font-size:14px;line-height:1.5}.f.y{background:rgba(34,197,94,.12)}.f.n{background:rgba(239,68,68,.12)}
-.md{font-size:66px;text-align:center}.rk{font-size:24px;text-align:center}
-.nm{display:flex;gap:10px;margin:16px 0}.nm>div{flex:1;background:#0f172a;border-radius:11px;padding:12px;text-align:center}
-.nm b{display:block;font-size:24px}.nm small{font-size:11px;color:#94a3b8}
-.hide{display:none}
-</style></head><body><div class="b">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Evaluaciones HEAVENFOOD</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Disposición: banda de marca arriba y una sola columna de trabajo (máx. 760 px), una pantalla a la vez, como un examen en papel. */
+:root{
+  --bg:#F4F2F0; --card:#FFFFFF; --ink:#1C1614; --muted:#665B56; --line:#E3DCD7;
+  --brand:#9E0B0B; --brand-ink:#FFFFFF; --brand-text:#9E0B0B;
+  --gold:#C9A84C; --gold-text:#7A5F17; --gold-soft:#F6EFDB;
+  --ok:#2E7D32; --ok-soft:#E8F4E9; --bad:#B3261E; --bad-soft:#FBEBE9;
+  --wa:#17824A; --shadow:0 8px 28px rgba(60,20,10,.10);
+  --f-display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#151110; --card:#211A18; --ink:#F3ECE8; --muted:#B1A39C; --line:#3B302C;
+    --brand:#A3140F; --brand-ink:#FFFFFF; --brand-text:#F29488;
+    --gold:#D9BC6A; --gold-text:#E2C87E; --gold-soft:#352B18;
+    --ok:#74C278; --ok-soft:#1C3220; --bad:#F2877D; --bad-soft:#3E1F1C;
+    --wa:#17824A; --shadow:0 8px 28px rgba(0,0,0,.45); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#151110; --card:#211A18; --ink:#F3ECE8; --muted:#B1A39C; --line:#3B302C;
+  --brand:#A3140F; --brand-ink:#FFFFFF; --brand-text:#F29488;
+  --gold:#D9BC6A; --gold-text:#E2C87E; --gold-soft:#352B18;
+  --ok:#74C278; --ok-soft:#1C3220; --bad:#F2877D; --bad-soft:#3E1F1C;
+  --wa:#17824A; --shadow:0 8px 28px rgba(0,0,0,.45); color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1rem;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 
-<section id="s1" class="s on"><div class="c">
-<svg class="lg" viewBox="0 0 512 512"><defs><radialGradient id="g" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#fff3b0"/><stop offset=".5" stop-color="#f3c43f"/><stop offset="1" stop-color="#c8961a"/></radialGradient><linearGradient id="r" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e23b3b"/><stop offset="1" stop-color="#8f1212"/></linearGradient></defs><circle cx="256" cy="256" r="244" fill="#d9a521"/><circle cx="256" cy="256" r="232" fill="url(#g)"/><circle cx="256" cy="256" r="205" fill="none" stroke="#8a5f0a" stroke-width="3"/><text x="256" y="118" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="32" fill="#5e4708">FOOD SAFETY</text><path d="M44,232 L468,232 L468,288 L44,288 Z" fill="url(#r)"/><text x="256" y="272" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="42" fill="#fff">HEAVEN FOOD</text><text x="256" y="352" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="18" fill="#5e4708">SU ALIADO EN CALIDAD</text><text x="256" y="376" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="18" fill="#5e4708">E INOCUIDAD ALIMENTARIA</text></svg>
-<h1>Reto Inocuidad</h1><p class="m">Evaluación interactiva · Resolución 2674 de 2013</p>
-<p class="in">Pon a prueba tus conocimientos en <b>inocuidad alimentaria</b>. Las preguntas <b>suben de dificultad</b> y recibes tu calificación al instante. 🎯</p>
-<label>Tu nombre completo</label><input id="nm" placeholder="Ej: María Pérez">
-<label>Grupo / curso (opcional)</label><input id="gp" placeholder="Ej: Manipuladores Turno A">
-<button class="bt" onclick="start()">¡Comenzar! →</button>
-<p class="m" style="margin-top:14px">Una herramienta de <b style="color:#fcd34d">Heaven Food</b> 🍽️</p>
-</div></section>
+/* Banda de marca */
+.band{background:var(--brand);color:var(--brand-ink);border-bottom:4px solid var(--gold)}
+.band-in{display:flex;align-items:center;gap:12px;padding-block:10px}
+.sello{width:54px;height:54px;flex:none;display:block}
+.sello svg{width:100%;height:100%;display:block}
+.marca{display:flex;flex-direction:column;min-width:0;flex:1}
+.marca b{font-family:var(--f-display);font-weight:800;letter-spacing:.08em;font-size:1.05rem}
+.marca span{font-size:.82rem;opacity:.9}
+.band button{background:transparent;color:var(--brand-ink);border:1px solid rgba(255,255,255,.55);border-radius:8px;padding:7px 10px;font:600 .8rem var(--f-body);cursor:pointer}
 
-<section id="s2" class="s"><div class="c">
-<div class="h"><span id="ct">Pregunta 1</span><span id="sc" class="p">· 0</span></div>
-<div class="bar"><i id="pg"></i></div><span id="lv" class="lv">Nivel 1</span>
-<div class="q" id="qt"></div><div id="op"></div>
-<div id="fb" class="f hide"></div>
-<button id="nx" class="bt hide" onclick="next()">Siguiente ➜</button>
-</div></section>
+main.wrap{padding-block:22px 48px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:26px 22px}
+.eyebrow{font:700 .74rem var(--f-display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-text)}
+h1{font-size:1.7rem;font-weight:800;color:var(--brand-text);margin-top:4px}
+.lead{color:var(--muted);margin-top:8px;max-width:60ch}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px;padding:0;list-style:none}
+.pills li{background:var(--gold-soft);color:var(--ink);border-radius:999px;padding:5px 13px;font-size:.84rem;font-weight:600}
 
-<section id="s3" class="s"><div class="c">
-<div class="md" id="md">🏆</div><div class="rk" id="rk"></div><p class="m" id="wh"></p>
-<div class="nm"><div><b id="pc">0%</b><small>Aprobación</small></div><div><b id="gd" style="color:#22c55e">0</b><small>Nota 0-5</small></div><div><b id="pt">0</b><small>Puntos</small></div></div>
-<p class="m" id="dt"></p>
-<div class="f y" style="margin-top:14px"><b>📝 Retroalimentación</b><p id="rf" style="margin-top:5px"></p></div>
-<button class="bt" onclick="mail()">Enviar al docente ✉️</button>
-<button class="bt bg" onclick="location.reload()">Intentar de nuevo 🔁</button>
-</div></section>
+form{display:flex;flex-direction:column;gap:14px}
+.fila{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:flex;flex-direction:column;gap:5px;font-weight:600;font-size:.9rem;min-width:0}
+label small{font-weight:400;color:var(--muted)}
+input{font:400 1rem var(--f-body);padding:12px 13px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);width:100%}
+input:focus{outline:none;border-color:var(--gold)}
+.error{color:var(--bad);font-weight:600;font-size:.9rem;min-height:1.3em}
 
-</div><script>
-var T="yesid.castrillon@gmail.com";
-var TP={hig:["🧼 Prácticas higiénicas","#22c55e"],eta:["🦠 ETA","#ef4444"],edu:["▪ Educación sanitaria","#3b82f6"],nor:["⚖️ Normatividad","#a855f7"],des:["🧪 Desinfectantes","#06b6d4"],con:["☣️ Contaminación","#f97316"],hac:["🎯 HACCP","#eab308"]};
-var Q=[
-{t:"hig",l:1,q:"¿Cuál es la práctica higiénica más importante para evitar contaminar los alimentos?",o:["Usar perfume","Lavarse las manos correctamente","Hablar poco","Usar reloj"],a:1,e:"El lavado de manos es la barrera #1 (Res. 2674/2013)."},
-{t:"eta",l:1,q:"¿Qué significa la sigla ETA?",o:["Tratamiento Ambiental","Enfermedad Transmitida por Alimentos","Examen Técnico","Trazabilidad"],a:1,e:"ETA = Enfermedad Transmitida por Alimentos."},
-{t:"con",l:1,q:"Un cabello o vidrio en el alimento es contaminación:",o:["Física","Emocional","Económica","Digital"],a:0,e:"Los peligros físicos son objetos extraños que pueden lesionar."},
-{t:"edu",l:2,q:"La capacitación del manipulador debe ser:",o:["Una sola vez","Continua y permanente","Opcional","Solo en visitas"],a:1,e:"La norma exige capacitación continua con registros."},
-{t:"nor",l:2,q:"La Resolución 2674 de 2013 reglamenta:",o:["El transporte","Requisitos sanitarios de alimentos","Las redes","Impuestos"],a:1,e:"Requisitos sanitarios de la cadena de alimentos para consumo humano."},
-{t:"des",l:2,q:"Antes de desinfectar SIEMPRE se debe:",o:["Aplicar sobre la suciedad","Limpiar y luego desinfectar","Secar con trapo sucio","Rociar perfume"],a:1,e:"La materia orgánica inactiva el desinfectante: primero limpiar."},
-{t:"eta",l:3,q:"La 'zona de peligro' de temperatura es:",o:["-18 a 0 °C","5 a 60 °C","60 a 100 °C","100 a 150 °C"],a:1,e:"Entre 5 y 60 °C los microbios se multiplican rápido."},
-{t:"des",l:3,q:"Para desinfectar frutas y verduras crudas, el cloro común es:",o:["500 ppm","50 ppm","5000 ppm","0 ppm"],a:1,e:"Cerca de 50 ppm de cloro libre por unos minutos."},
-{t:"hac",l:3,q:"Un Punto Crítico de Control (PCC) es una etapa donde:",o:["Se fija el precio","Se controla un peligro a nivel aceptable","Se sirve al cliente","Se hace publicidad"],a:1,e:"Fase donde el control previene/elimina/reduce un peligro (ej. cocción)."},
-{t:"con",l:4,q:"Carnes crudas en refrigeración deben ir:",o:["Encima de lo cocido","Debajo y tapadas","Mezcladas","Fuera de la nevera"],a:1,e:"Abajo y tapadas, para que sus jugos no goteen sobre lo listo."},
-{t:"hig",l:4,q:"El cabello del manipulador debe estar:",o:["Suelto si está limpio","Cubierto con cofia o gorro","Cubierto solo en verano","Recogido sin cofia"],a:1,e:"Totalmente cubierto con cofia/gorro para evitar caída al alimento."},
-{t:"hac",l:5,q:"En el HACCP, ¿qué se realiza PRIMERO?",o:["Acciones correctivas","El análisis de peligros","Documentar","Verificar"],a:1,e:"El análisis de peligros: sin conocerlos no se definen los PCC."}
+.btn{font:700 1rem var(--f-display);letter-spacing:.01em;border:0;border-radius:11px;padding:14px 20px;cursor:pointer;text-align:center;text-decoration:none;display:inline-block}
+.btn:active{transform:translateY(1px)}
+.btn-pri{background:var(--brand);color:var(--brand-ink)}
+.btn-pri:disabled{background:var(--line);color:var(--muted);cursor:not-allowed}
+.btn-sec{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-link{background:none;border:0;color:var(--muted);font:600 .86rem var(--f-body);text-decoration:underline;cursor:pointer;padding:6px}
+
+/* Selección de tema */
+.temas{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:20px 0}
+.tema{display:grid;grid-template-columns:44px 1fr;gap:4px 12px;align-items:start;text-align:left;background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:13px;padding:14px;cursor:pointer;font-family:var(--f-body);min-width:0}
+.tema:hover{border-color:var(--gold)}
+.tema[aria-pressed="true"]{border-color:var(--brand-text);background:var(--gold-soft)}
+.tema .ico{grid-row:span 3;width:44px;height:44px;border-radius:50%;background:var(--gold-soft);color:var(--brand-text);display:grid;place-items:center}
+.tema[aria-pressed="true"] .ico{background:var(--brand);color:var(--brand-ink)}
+.ico svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tema b{font:700 1rem var(--f-display);line-height:1.2}
+.tema .sub{font-size:.84rem;color:var(--muted);line-height:1.3}
+.tema .est{font-size:.76rem;font-weight:700;margin-top:4px}
+.est.ok{color:var(--ok)} .est.no{color:var(--bad)} .est.nu{color:var(--muted);font-weight:400}
+.barra-accion{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.barra-accion .btn{flex:1 1 220px}
+
+/* Examen */
+.quiz-top{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:14px}
+.prog{flex:1;min-width:0}
+.prog b{font:700 .9rem var(--f-display)}
+.barra{height:8px;background:var(--line);border-radius:99px;margin-top:7px;overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+.crono{position:relative;width:58px;height:58px;flex:none}
+.crono svg{width:100%;height:100%;transform:rotate(-90deg)}
+.crono .fondo{fill:none;stroke:var(--line);stroke-width:3}
+.crono .arco{fill:none;stroke:var(--brand-text);stroke-width:3;stroke-linecap:round;stroke-dasharray:100;transition:stroke-dashoffset 1s linear}
+.crono span{position:absolute;inset:0;display:grid;place-items:center;font:800 1.1rem var(--f-display);font-variant-numeric:tabular-nums}
+.crono.alerta .arco{stroke:var(--bad)} .crono.alerta span{color:var(--bad)}
+.q-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.q-head .ico{width:40px;height:40px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;flex:none}
+.q-head .ico svg{width:22px;height:22px}
+.q-head b{font:700 .8rem var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--gold-text)}
+#q-texto{font-size:1.22rem;font-weight:700;margin-bottom:18px}
+.ops{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.op{display:flex;gap:11px;align-items:flex-start;text-align:left;font:400 1rem var(--f-body);color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:11px;padding:12px 13px;cursor:pointer;min-width:0}
+.op .l{width:28px;height:28px;flex:none;border-radius:50%;background:var(--line);display:grid;place-items:center;font:800 .88rem var(--f-display)}
+.op .t{min-width:0;overflow-wrap:anywhere;padding-top:2px}
+.op:hover:not(:disabled){border-color:var(--gold)}
+.op.sel{border-color:var(--brand-text);background:var(--gold-soft)}
+.op.sel .l{background:var(--brand);color:var(--brand-ink)}
+.op:disabled{cursor:default}
+.op.ok{border-color:var(--ok);background:var(--ok-soft)} .op.ok .l{background:var(--ok);color:var(--card)}
+.op.no{border-color:var(--bad);background:var(--bad-soft)} .op.no .l{background:var(--bad);color:var(--card)}
+.retro{border-radius:11px;padding:13px 15px;margin-bottom:16px;font-size:.97rem}
+.retro b{font-family:var(--f-display);display:block;margin-bottom:2px}
+.retro.ok{background:var(--ok-soft)} .retro.ok b{color:var(--ok)}
+.retro.no{background:var(--bad-soft)} .retro.no b{color:var(--bad)}
+.quiz-pie{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px}
+#btn-resp{width:100%}
+
+/* Resultado */
+.res-top{text-align:center}
+.insignia{width:92px;height:92px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;color:#fff;font:800 2.6rem var(--f-display)}
+.insignia.ok{background:#2E7D32} .insignia.no{background:#B3261E}
+#res-titulo.ok{color:var(--ok)} #res-titulo.no{color:var(--bad)}
+.cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:18px 0;padding:0;list-style:none}
+.cifras li{background:var(--gold-soft);border-radius:11px;padding:10px 8px;text-align:center}
+.cifras b{display:block;font:800 1.35rem var(--f-display);font-variant-numeric:tabular-nums}
+.cifras span{font-size:.8rem;color:var(--muted)}
+#cert-img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:#fff}
+.nota{font-size:.84rem;color:var(--muted);margin:8px 0 16px}
+.acciones{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+#estado-envio{font-size:.88rem;font-weight:600;min-height:1.3em;margin-top:10px;text-align:center}
+details{margin-top:22px;border-top:1px solid var(--line);padding-top:14px}
+summary{font:700 1rem var(--f-display);cursor:pointer}
+.rev{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-direction:column;gap:12px}
+.rev li{border-left:4px solid var(--line);padding:2px 0 2px 12px;font-size:.94rem}
+.rev li.ok{border-color:var(--ok)} .rev li.no{border-color:var(--bad)}
+.rev .q{font-weight:700}
+.rev .r{color:var(--muted)}
+.rev .c{color:var(--ok);font-weight:600}
+footer.wrap{padding-block:0 28px;font-size:.8rem;color:var(--muted);text-align:center}
+@media (max-width:520px){ .fila{grid-template-columns:1fr} h1{font-size:1.45rem} .card{padding:20px 16px} #q-texto{font-size:1.1rem} }
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="wrap band-in">
+    <span class="sello" id="sello" aria-hidden="true"></span>
+    <div class="marca"><b>HEAVENFOOD</b><span>Evaluaciones de capacitación en inocuidad</span></div>
+    <button type="button" id="btn-participante" hidden>Cambiar participante</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- 1. Registro -->
+  <section class="card" id="p-inicio">
+    <p class="eyebrow">Capacitación de manipuladores de alimentos</p>
+    <h1>Evaluación de conocimientos</h1>
+    <p class="lead">Escribe tus datos tal como deben aparecer en la constancia. Después eliges el tema que vas a presentar.</p>
+    <ul class="pills" id="pills"></ul>
+    <form id="form-inicio" novalidate>
+      <label for="nombre">Nombre completo *<input id="nombre" autocomplete="name" maxlength="70" required></label>
+      <div class="fila">
+        <label for="documento">Documento de identidad *<input id="documento" inputmode="numeric" maxlength="20" required></label>
+        <label for="cargo">Cargo <small>(opcional)</small><input id="cargo" maxlength="40" placeholder="Ej.: auxiliar de cocina"></label>
+      </div>
+      <label for="empresa">Empresa o establecimiento <small>(opcional)</small><input id="empresa" maxlength="60"></label>
+      <p class="error" id="error-inicio" role="alert"></p>
+      <button class="btn btn-pri" type="submit">Continuar ▶</button>
+    </form>
+  </section>
+
+  <!-- 2. Tema -->
+  <section class="card" id="p-temas" hidden>
+    <p class="eyebrow" id="saludo">Participante</p>
+    <h1>Elige el tema a evaluar</h1>
+    <p class="lead" id="temas-lead"></p>
+    <div class="temas" id="temas"></div>
+    <div class="barra-accion">
+      <button class="btn btn-pri" type="button" id="btn-comenzar" disabled>Elige un tema</button>
+    </div>
+  </section>
+
+  <!-- 3. Examen -->
+  <section id="p-quiz" hidden>
+    <div class="quiz-top">
+      <div class="prog"><b id="q-contador">Pregunta 1 de 15</b><div class="barra"><i id="q-barra"></i></div></div>
+      <div class="crono" id="crono" role="timer" aria-label="Segundos restantes">
+        <svg viewBox="0 0 36 36" aria-hidden="true"><circle class="fondo" cx="18" cy="18" r="15.915"/><circle class="arco" id="crono-arco" cx="18" cy="18" r="15.915"/></svg>
+        <span id="crono-num">40</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="q-head"><span class="ico" id="q-ico"></span><b id="q-tema">Tema</b></div>
+      <h2 id="q-texto">Pregunta…</h2>
+      <div class="ops" id="q-ops"></div>
+      <div id="q-retro" aria-live="polite"></div>
+      <button class="btn btn-pri" type="button" id="btn-resp" disabled>Responder</button>
+      <div class="quiz-pie">
+        <button class="btn-link" type="button" id="btn-sonido">Sonido: activado</button>
+        <button class="btn-link" type="button" id="btn-salir">Abandonar evaluación</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Resultado -->
+  <section class="card" id="p-resultado" hidden>
+    <div class="res-top">
+      <div class="insignia" id="res-insignia">✓</div>
+      <h1 id="res-titulo">APROBADO</h1>
+      <p class="lead" id="res-detalle" style="margin-inline:auto"></p>
+    </div>
+    <ul class="cifras" id="res-cifras"></ul>
+    <img id="cert-img" alt="Constancia de evaluación" width="1400" height="990">
+    <p class="nota">Esta constancia acredita el resultado de la evaluación. No reemplaza el certificado de capacitación en manipulación de alimentos. Si la descarga no inicia, mantén presionada la imagen y elige «Guardar imagen».</p>
+    <div class="acciones">
+      <button class="btn btn-pri" type="button" id="btn-descargar">⬇ Descargar constancia</button>
+      <a class="btn btn-wa" id="btn-wa" target="_blank" rel="noopener">Enviar resultado por WhatsApp</a>
+      <button class="btn btn-sec" type="button" id="btn-otro">Evaluar otro tema</button>
+      <button class="btn btn-sec" type="button" id="btn-repetir">Repetir este tema</button>
+    </div>
+    <p id="estado-envio" role="status"></p>
+    <details>
+      <summary>Revisar mis respuestas</summary>
+      <ol class="rev" id="res-rev"></ol>
+    </details>
+  </section>
+</main>
+<footer class="wrap"><p id="pie"></p></footer>
+<canvas id="cert" width="1400" height="990" hidden></canvas>
+
+<script>
+"use strict";
+/* ============================================================================
+ * CONFIGURACIÓN — edita solo este bloque para ajustar la plataforma
+ * ==========================================================================*/
+const CFG = {
+  marca: "HEAVENFOOD",
+  lema: "Su aliado en calidad e inocuidad alimentaria",
+  evaluador: "Ing. Yesid Alfonso Castrillón Torres",
+  cargoEvaluador: "Ingeniero Agroindustrial · Capacitador en inocuidad alimentaria",
+  preguntasPorIntento: 15,   // se eligen al azar del banco de 20 de cada tema
+  segundosPorPregunta: 40,   // cronómetro por pregunta (las de cálculo traen su propio tiempo)
+  alertaSonoraDesde: 5,      // segundos finales con pitido
+  umbralAprobacion: 80,      // % mínimo para APROBAR
+  whatsapp: "573163165911"   // número que recibe los resultados, sin "+" ni espacios
+};
+
+/* ============================================================================
+ * BANCO DE PREGUNTAS — EVALUACIONES DE CAPACITACIÓN HEAVENFOOD
+ * 9 temas · 20 preguntas por tema · 180 preguntas.
+ * Formato de cada pregunta:
+ *   [ enunciado, RESPUESTA CORRECTA, distractor, distractor, distractor, retroalimentación, segundos? ]
+ * La respuesta correcta SIEMPRE va en la segunda posición; la app baraja las
+ * opciones en cada intento. "segundos" es opcional (preguntas de cálculo).
+ * ==========================================================================*/
+const TEMAS = [
+{
+  id: "ld", nombre: "Limpieza y desinfección", sub: "Programa y preparación de desinfectantes",
+  norma: "Res. 2674 de 2013, art. 26",
+  preguntas: [
+    ["¿Cuál es la diferencia entre limpiar y desinfectar?",
+     "Limpiar retira la suciedad visible; desinfectar reduce los microorganismos a niveles seguros",
+     "Son lo mismo; solo cambia el producto que se usa",
+     "Limpiar elimina los microbios y desinfectar da buen olor",
+     "Desinfectar retira la grasa y limpiar mata las bacterias",
+     "Son dos operaciones distintas y complementarias: primero se retira la suciedad y después se reduce la carga microbiana."],
+    ["¿Cuál es el orden correcto para limpiar y desinfectar una superficie?",
+     "Retirar residuos, lavar con detergente, enjuagar, desinfectar y dejar secar",
+     "Desinfectar, lavar con detergente, enjuagar y secar con trapo",
+     "Lavar con detergente, desinfectar encima de la espuma y secar",
+     "Enjuagar, desinfectar y al final retirar los residuos",
+     "El desinfectante solo actúa sobre una superficie limpia y enjuagada; el detergente que queda lo neutraliza."],
+    ["¿Por qué no se debe aplicar desinfectante sobre una superficie sucia?",
+     "Porque la materia orgánica inactiva el desinfectante",
+     "Porque el desinfectante mancha la suciedad",
+     "Porque se gasta más agua",
+     "Sí se puede: el desinfectante también limpia",
+     "La grasa y los restos de alimento consumen el ingrediente activo y protegen a los microorganismos."],
+    ["¿Qué ocurre si mezcla hipoclorito de sodio con detergente o con un producto ácido?",
+     "Puede liberar gases tóxicos y el cloro pierde su efecto desinfectante",
+     "La mezcla limpia y desinfecta mejor en un solo paso",
+     "No pasa nada si se usa agua caliente",
+     "Solo cambia el color de la solución",
+     "Los productos químicos nunca se mezclan entre sí: es un riesgo para el trabajador y anula la desinfección."],
+    ["¿Con qué fórmula se calcula la cantidad de desinfectante concentrado que debe medir?",
+     "V1 = (C2 × V2) ÷ C1",
+     "V1 = (C1 × V2) ÷ C2",
+     "V1 = C1 + C2 + V2",
+     "V1 = (C1 × C2) ÷ V2",
+     "C1 es la concentración del producto comercial, C2 la concentración que necesita y V2 el volumen de solución que va a preparar."],
+    ["Tiene hipoclorito al 5,25 % (52.500 ppm). ¿Cuánto debe medir para preparar 1 litro de solución a 200 ppm?",
+     "3,8 mL", "38 mL", "0,4 mL", "20 mL",
+     "V1 = (200 ppm × 1.000 mL) ÷ 52.500 ppm = 3,8 mL. Se completa con agua potable hasta 1 litro.", 70],
+    ["Con el mismo hipoclorito al 5,25 %, ¿cuánto se necesita para preparar 10 litros de solución a 100 ppm?",
+     "19 mL", "1,9 mL", "190 mL", "52 mL",
+     "V1 = (100 ppm × 10.000 mL) ÷ 52.500 ppm = 19 mL.", 70],
+    ["Una concentración del 1 % equivale a:",
+     "10.000 ppm", "1.000 ppm", "100 ppm", "100.000 ppm",
+     "1 % = 10.000 partes por millón. Por eso un hipoclorito al 5,25 % tiene 52.500 ppm."],
+    ["¿Cada cuánto se debe preparar la solución de hipoclorito para desinfectar?",
+     "Cada día de uso, porque pierde concentración con el tiempo, la luz y el calor",
+     "Una vez al mes, guardada en un recipiente transparente",
+     "Solo cuando se termine la anterior, sin importar los días",
+     "Una vez por semana, dejándola destapada",
+     "El cloro es inestable. Una solución vieja puede no tener la concentración necesaria para desinfectar."],
+    ["¿Qué información debe llevar el recipiente donde guarda la solución desinfectante preparada?",
+     "Nombre del producto, concentración, fecha y hora de preparación y responsable",
+     "Solo la palabra «Peligro»",
+     "No necesita rótulo si el envase es blanco",
+     "Únicamente el precio del producto",
+     "Todo envase con químicos debe estar identificado para evitar confusiones y accidentes."],
+    ["¿Qué es el tiempo de contacto de un desinfectante?",
+     "El tiempo mínimo que debe permanecer sobre la superficie para que actúe, según la ficha técnica",
+     "El tiempo que tarda en llegar el pedido del proveedor",
+     "Los minutos que demora en secarse el piso",
+     "El tiempo que el operario demora lavando",
+     "Si se retira o enjuaga antes del tiempo indicado por el fabricante, la desinfección no es efectiva."],
+    ["¿Cómo se comprueba que la solución quedó a la concentración correcta?",
+     "Con tiras reactivas o un kit medidor de cloro",
+     "Por el olor: si huele fuerte, está bien",
+     "Por el color del agua",
+     "Probándola con el dedo",
+     "La verificación se hace con un instrumento de medición y se anota en el registro de preparación de soluciones."],
+    ["¿Dónde se almacenan los detergentes y desinfectantes?",
+     "En un área separada, identificada y lejos de alimentos, en sus envases rotulados",
+     "En la misma estantería de los alimentos, en la parte de abajo",
+     "Debajo del mesón de preparación, para tenerlos a la mano",
+     "En la nevera, para que duren más",
+     "Los químicos son un peligro de contaminación: se guardan aparte, bajo control y con su rótulo."],
+    ["¿Se puede guardar desinfectante en una botella de gaseosa o de agua?",
+     "Nunca: puede confundirse con una bebida y causar una intoxicación",
+     "Sí, si la botella está bien lavada",
+     "Sí, cuando el envase original se dañó",
+     "Sí, siempre que se guarde en la cocina",
+     "Los envases de alimentos y bebidas no se reutilizan para productos químicos."],
+    ["¿Qué significa la sigla POES?",
+     "Procedimientos Operativos Estandarizados de Saneamiento",
+     "Programa Oficial de Evaluación Sanitaria",
+     "Plan de Orden y Eliminación de Suciedad",
+     "Proceso Obligatorio de Enjuague y Secado",
+     "Los POES describen paso a paso qué se limpia, cómo, con qué, cada cuánto y quién lo hace."],
+    ["¿Qué documentos debe tener disponibles la empresa por cada producto químico que usa?",
+     "La ficha técnica y la hoja de datos de seguridad",
+     "Solo la factura de compra",
+     "Una foto del envase",
+     "Ninguno, si el producto es de marca conocida",
+     "La ficha técnica indica dosis y tiempo de contacto; la hoja de seguridad, cómo actuar ante un derrame o accidente."],
+    ["¿Para qué se rotan los desinfectantes cada cierto tiempo?",
+     "Para evitar que los microorganismos generen resistencia",
+     "Para gastar menos dinero",
+     "Para cambiar el olor del establecimiento",
+     "Porque todos los productos se vencen cada semana",
+     "Alternar ingredientes activos, según lo defina el programa, mantiene la eficacia de la desinfección."],
+    ["¿Cómo se manejan los paños y esponjas de limpieza?",
+     "Se lavan y desinfectan después de usarlos, se dejan secar y se reemplazan cuando se deterioran",
+     "Se dejan húmedos sobre el mesón para el día siguiente",
+     "Se usa el mismo paño para el baño y la cocina",
+     "Se enjuagan solo con agua una vez por semana",
+     "Un paño húmedo y sucio multiplica bacterias y las reparte por todas las superficies."],
+    ["¿Cómo se desinfectan las frutas y verduras que se consumen crudas?",
+     "Se lavan con agua potable y se sumergen en desinfectante apto para alimentos, a la dosis y tiempo de la ficha técnica",
+     "Con la misma solución concentrada que se usa para los pisos",
+     "Con detergente de loza y abundante espuma",
+     "Solo se sacuden para quitar la tierra",
+     "Se usan productos autorizados para contacto con alimentos, en concentraciones menores que las de superficies."],
+    ["¿Cuándo se diligencia el registro de limpieza y desinfección?",
+     "En el momento en que se realiza la actividad",
+     "Al final del mes, todos los días juntos",
+     "Solo cuando avisan que viene visita de la autoridad sanitaria",
+     "No es necesario si el sitio se ve limpio",
+     "El registro es la evidencia de que la actividad se hizo. Lo que no se registra, no se puede demostrar."]
+  ]
+},
+{
+  id: "cp", nombre: "Control de plagas", sub: "Manejo integrado de plagas",
+  norma: "Res. 2674 de 2013, art. 26",
+  preguntas: [
+    ["¿Cuáles son las plagas más comunes en un establecimiento de alimentos?",
+     "Roedores, cucarachas, moscas, hormigas y aves",
+     "Únicamente los ratones",
+     "Perros y gatos solamente",
+     "Las plagas solo aparecen en el campo",
+     "Roedores, insectos rastreros, insectos voladores y aves son los grupos que debe controlar el programa."],
+    ["¿En qué se basa el manejo integrado de plagas?",
+     "En prevenir primero: orden, limpieza y barreras físicas; el control químico es el último recurso",
+     "En fumigar todos los días con insecticida",
+     "En esperar a ver plagas para actuar",
+     "En poner veneno en todas las áreas de proceso",
+     "La prevención evita que la plaga entre y se instale; los plaguicidas se usan solo cuando es necesario y de forma controlada."],
+    ["¿Qué tres cosas busca una plaga dentro del establecimiento?",
+     "Alimento, agua y refugio",
+     "Luz, ruido y aire acondicionado",
+     "Personas, dinero y electricidad",
+     "Frío, jabón y cloro",
+     "Si se le quitan alimento, agua y refugio, la plaga no puede vivir ni reproducirse en el lugar."],
+    ["¿Cuáles son señales de presencia de roedores?",
+     "Excrementos, empaques roídos, huellas y manchas de grasa junto a las paredes",
+     "Telarañas en el techo",
+     "Olor a cloro en la bodega",
+     "Polvo sobre las estanterías",
+     "Los roedores casi nunca se ven de día; se detectan por sus rastros. Todo hallazgo se informa y se registra."],
+    ["¿Quién puede aplicar plaguicidas en un establecimiento de alimentos?",
+     "Una empresa autorizada por la autoridad sanitaria, con personal capacitado",
+     "Cualquier empleado que tenga tiempo",
+     "El vecino que vende veneno",
+     "El manipulador, durante la producción",
+     "El Decreto 1843 de 1991 regula el uso de plaguicidas. La empresa aplicadora debe tener concepto sanitario vigente."],
+    ["¿Cuál de estas es una barrera física contra las plagas?",
+     "Mallas en ventanas, rejillas en sifones y sellos en la parte baja de las puertas",
+     "Un ambientador en aerosol",
+     "Dejar la puerta abierta para ventilar",
+     "Poner plantas en la entrada",
+     "Las barreras físicas cierran los puntos de ingreso. También se sellan grietas y huecos de tuberías."],
+    ["¿Dónde se pueden ubicar los cebos con veneno para roedores?",
+     "Solo en exteriores, dentro de estaciones cerradas, numeradas y ubicadas en un plano",
+     "Sobre los mesones de preparación",
+     "Dentro de la bodega, junto a los alimentos",
+     "En cualquier rincón de la cocina, sin protección",
+     "El veneno nunca va en áreas de proceso o almacenamiento. Dentro se usan trampas mecánicas o adhesivas."],
+    ["¿Dónde NO debe instalarse una lámpara de luz ultravioleta para insectos?",
+     "Encima de mesones, equipos o alimentos expuestos",
+     "En un pasillo alejado del área de proceso",
+     "Cerca de la zona de ingreso, lejos del producto",
+     "En la zona de recibo, a un lado de la puerta",
+     "Los insectos atrapados pueden caer sobre el alimento. La lámpara se instala lejos del producto y de las superficies de trabajo."],
+    ["¿Cómo se deben almacenar los alimentos para facilitar el control de plagas?",
+     "Sobre estibas o estantes, separados del piso y de las paredes",
+     "Directamente sobre el piso, contra la pared",
+     "Amontonados hasta el techo, sin pasillos",
+     "En cajas de cartón húmedas",
+     "La separación permite inspeccionar, limpiar y detectar rastros de plagas a tiempo."],
+    ["Usted ve una cucaracha en el área de preparación. ¿Qué hace?",
+     "Informa de inmediato al responsable y registra el hallazgo",
+     "Aplica insecticida en aerosol y sigue trabajando",
+     "No dice nada para evitar problemas",
+     "Espera a ver más para estar seguro",
+     "Un hallazgo se reporta y se registra para que se tomen acciones correctivas. El manipulador no aplica químicos por su cuenta."],
+    ["¿Por qué las plagas son un peligro para la inocuidad?",
+     "Porque transportan microorganismos que causan enfermedades y contaminan con excrementos, orina y pelos",
+     "Solo porque dan mala imagen",
+     "Porque consumen mucha electricidad",
+     "No son un peligro si no tocan el alimento",
+     "Roedores e insectos transmiten Salmonella, Leptospira y otros patógenos a los alimentos y a las superficies."],
+    ["Después de una fumigación, ¿qué debe entregar la empresa aplicadora?",
+     "Un certificado o informe con producto usado, ingrediente activo, dosis, áreas tratadas y fecha",
+     "Solo un recibo de pago",
+     "Nada: basta con la palabra del técnico",
+     "Una muestra del veneno",
+     "Ese soporte es la evidencia del servicio y permite actuar ante una intoxicación o una visita de la autoridad."],
+    ["¿Qué se hace con los alimentos y utensilios antes de una aplicación de plaguicidas?",
+     "Se retiran o se protegen, y después se lavan y desinfectan las superficies antes de trabajar",
+     "Se dejan donde están; el producto no les hace daño",
+     "Se cubren con un trapo húmedo",
+     "Se rocían también, para que no les lleguen plagas",
+     "Los plaguicidas son un peligro químico. Se respeta el tiempo de reingreso indicado por la empresa aplicadora."],
+    ["¿Se puede usar insecticida doméstico en aerosol dentro de la cocina?",
+     "No: contamina los alimentos y las superficies con sustancias químicas",
+     "Sí, si se aplica rápido",
+     "Sí, cuando hay muchas moscas",
+     "Sí, si el alimento está tapado con una servilleta",
+     "El control químico lo hace personal autorizado, con productos aptos y sin alimentos expuestos."],
+    ["Al recibir harina, encuentra el empaque perforado y con gorgojos. ¿Qué hace?",
+     "Rechaza el producto y registra la novedad",
+     "Lo recibe y lo cierne para quitar los gorgojos",
+     "Lo guarda en la bodega para revisarlo después",
+     "Lo mezcla con harina nueva",
+     "Un producto infestado contamina toda la bodega. La recepción es el primer punto de control."],
+    ["¿Se permiten perros, gatos u otros animales en las áreas de proceso y almacenamiento?",
+     "No, en ningún momento",
+     "Sí, si están vacunados",
+     "Sí, los gatos ayudan a controlar ratones",
+     "Sí, cuando no hay producción",
+     "Los animales domésticos contaminan con pelos, saliva y excrementos, y transportan parásitos."],
+    ["¿Qué relación tienen los residuos con las plagas?",
+     "Los residuos mal manejados les dan alimento y refugio, por eso se retiran con frecuencia y en recipientes tapados",
+     "Ninguna: las plagas solo buscan agua",
+     "Las plagas ayudan a eliminar los residuos",
+     "Solo importa si los residuos son de carne",
+     "El programa de residuos y el de plagas trabajan juntos: basura acumulada es plaga segura."],
+    ["¿Por qué se debe eliminar el agua estancada en patios, canales y recipientes?",
+     "Porque es criadero de mosquitos como el Aedes, transmisor del dengue",
+     "Porque daña la pintura",
+     "Porque atrae clientes",
+     "No hace falta eliminarla",
+     "Los depósitos de agua quieta son el sitio donde el mosquito pone sus huevos."],
+    ["¿Qué tipo de control contra roedores se usa dentro de las áreas de proceso?",
+     "Trampas mecánicas o adhesivas, revisadas con frecuencia",
+     "Cebo envenenado en platos abiertos",
+     "Veneno en polvo sobre el piso",
+     "Ninguno: adentro no entran roedores",
+     "Dentro del proceso no se usan venenos, para evitar contaminación química y roedores muertos en sitios ocultos."],
+    ["¿Qué registros hacen parte del programa de control de plagas?",
+     "Inspecciones, plano de estaciones, certificados de aplicación y hallazgos con sus acciones correctivas",
+     "Solo las facturas de la empresa fumigadora",
+     "La lista de asistencia del personal",
+     "No se necesita ningún registro",
+     "Los registros demuestran que el programa se ejecuta y permiten ver si la presencia de plagas aumenta o disminuye."]
+  ]
+},
+{
+  id: "rs", nombre: "Residuos sólidos", sub: "Manejo integral de residuos",
+  norma: "Res. 2184 de 2019 · Res. 2674 de 2013",
+  preguntas: [
+    ["Según el código de colores vigente en Colombia, ¿qué va en cada recipiente?",
+     "Blanco: aprovechables · Negro: no aprovechables · Verde: orgánicos aprovechables",
+     "Blanco: orgánicos · Negro: reciclables · Verde: papel higiénico",
+     "Blanco: vidrio · Negro: comida · Verde: plástico",
+     "Todos los colores sirven para lo mismo",
+     "La Resolución 2184 de 2019 unificó el código de colores para la separación en la fuente."],
+    ["¿En qué recipiente se depositan las cáscaras de fruta y los restos de comida?",
+     "Verde", "Blanco", "Negro", "Rojo",
+     "El verde es para residuos orgánicos aprovechables: restos de comida y desechos agrícolas."],
+    ["¿En qué recipiente se depositan el cartón, el plástico, el vidrio y el metal limpios y secos?",
+     "Blanco", "Verde", "Negro", "Amarillo",
+     "El blanco es para residuos aprovechables. Si están sucios o mojados ya no se pueden reciclar."],
+    ["¿En qué recipiente van las servilletas sucias, el papel higiénico y los papeles contaminados con comida?",
+     "Negro", "Blanco", "Verde", "Azul",
+     "El negro es para residuos no aprovechables."],
+    ["¿Cómo deben ser los recipientes de residuos dentro de las áreas de proceso?",
+     "Con tapa, de pedal, con bolsa, identificados y de material lavable",
+     "Cajas de cartón sin tapa",
+     "Baldes abiertos, para botar más rápido",
+     "Cualquier recipiente sin bolsa",
+     "La tapa accionada con el pie evita tocar el recipiente con las manos y mantiene alejadas las plagas."],
+    ["¿Cada cuánto se retiran los residuos de las áreas de proceso?",
+     "Cuantas veces sea necesario y como mínimo al terminar cada jornada",
+     "Una vez por semana",
+     "Solo cuando el recipiente se rebosa",
+     "Cuando pase el camión recolector",
+     "Los residuos no se acumulan en las áreas de proceso: generan olores, atraen plagas y contaminan."],
+    ["Después de sacar la basura, ¿qué debe hacer antes de volver a manipular alimentos?",
+     "Lavarse y desinfectarse las manos",
+     "Limpiarse las manos en el delantal",
+     "Ponerse guantes encima sin lavarse",
+     "Nada, si usó la tapa de pedal",
+     "Manipular residuos contamina las manos. El lavado es obligatorio antes de retomar la labor."],
+    ["¿Qué se hace con el aceite de cocina usado?",
+     "Se almacena en un recipiente cerrado y se entrega a un gestor autorizado",
+     "Se bota por el sifón con agua caliente",
+     "Se regala para que lo vuelvan a usar en frituras",
+     "Se bota en la caneca verde",
+     "La Resolución 316 de 2018 prohíbe verterlo al desagüe; contamina el agua y tapona las tuberías. Se guarda el certificado de entrega."],
+    ["¿Cómo debe ser el sitio de almacenamiento temporal de residuos?",
+     "Separado de las áreas de alimentos, ventilado, protegido de la lluvia y las plagas, y fácil de lavar",
+     "Dentro de la cocina, al lado de la estufa",
+     "En la bodega de materias primas",
+     "En el andén, sin tapa",
+     "Un lugar exclusivo evita la contaminación de alimentos y el acceso de plagas y animales."],
+    ["¿Qué mantenimiento necesitan los recipientes de residuos?",
+     "Lavado y desinfección con la frecuencia definida, lejos del área de proceso",
+     "Solo cambiarles la bolsa",
+     "Ninguno, porque son para basura",
+     "Lavarlos en el lavaplatos de la cocina",
+     "Un recipiente sucio genera malos olores, lixiviados y plagas aunque tenga bolsa."],
+    ["¿Qué se debe evitar al sacar los residuos del establecimiento?",
+     "Que crucen con los alimentos durante la preparación o el recibo",
+     "Que los vean los clientes",
+     "Que pesen demasiado",
+     "Que salgan en horas de la mañana",
+     "Se define una ruta y un horario de evacuación para evitar la contaminación cruzada."],
+    ["¿Por qué el mal manejo de residuos es un riesgo para los alimentos?",
+     "Porque atrae plagas, genera malos olores y es fuente de contaminación",
+     "Solo porque ocupa espacio",
+     "Porque sube el recibo del aseo",
+     "No representa ningún riesgo",
+     "La Resolución 2674 exige retirarlos con frecuencia y disponerlos de manera que no contaminen."],
+    ["¿Qué se hace con un producto vencido o no conforme?",
+     "Se identifica, se separa del producto apto, se da de baja y se registra",
+     "Se deja en la estantería hasta que alguien lo note",
+     "Se le cambia la fecha con un marcador",
+     "Se mezcla con producto nuevo para no perderlo",
+     "El producto no apto se aísla para que no se use ni se venda por error. La baja queda documentada."],
+    ["¿Para qué sirve la trampa de grasas y qué cuidado necesita?",
+     "Retiene grasas y sólidos del agua residual; se limpia periódicamente y se registra",
+     "Atrapa ratones; se revisa una vez al año",
+     "Filtra el agua potable; no necesita limpieza",
+     "Guarda el aceite nuevo; se limpia cuando se acaba",
+     "Una trampa sin mantenimiento produce olores, taponamientos y presencia de cucarachas."],
+    ["¿Cómo se eliminan las aguas del lavado de pisos y equipos?",
+     "Por desagües con sifón y rejilla, conectados al sistema de alcantarillado",
+     "Barriéndolas hacia la calle",
+     "Dejándolas secar en el piso",
+     "Echándolas en la caneca de residuos",
+     "Los residuos líquidos se conducen por drenajes con rejilla, que además impiden el ingreso de plagas."],
+    ["¿Qué se hace con residuos peligrosos como envases de plaguicidas o bombillos fluorescentes?",
+     "Se separan y se entregan a un gestor autorizado",
+     "Se botan en la caneca verde",
+     "Se queman en el patio",
+     "Se reutilizan para guardar alimentos",
+     "Los residuos peligrosos tienen manejo especial y nunca se mezclan con los residuos ordinarios."],
+    ["¿Hasta dónde se llena una bolsa de residuos antes de retirarla?",
+     "Hasta tres cuartas partes, para poder cerrarla bien",
+     "Hasta que se rebose",
+     "Hasta la mitad de la tapa",
+     "No importa, se aprieta con la mano",
+     "Una bolsa cerrada no derrama residuos ni líquidos durante el traslado."],
+    ["¿Se puede usar una caneca de residuos para guardar hielo o alimentos?",
+     "Nunca: los recipientes de residuos son de uso exclusivo y están identificados",
+     "Sí, si es nueva",
+     "Sí, si se le pone una bolsa limpia",
+     "Sí, cuando hay eventos grandes",
+     "Usar el mismo tipo de recipiente genera confusión y riesgo de contaminación."],
+    ["¿Quién es responsable de separar correctamente los residuos?",
+     "Todo el personal, en el momento y lugar donde los genera",
+     "Solo la persona del aseo",
+     "Únicamente el dueño del negocio",
+     "La empresa recolectora",
+     "A eso se le llama separación en la fuente: cada persona clasifica el residuo cuando lo produce."],
+    ["¿Qué se anota en los registros del programa de residuos?",
+     "Tipo y cantidad de residuos, entregas al recolector o gestor y limpieza de recipientes",
+     "El nombre de los clientes del día",
+     "La temperatura de la nevera",
+     "No se lleva ningún registro",
+     "Los registros y certificados de los gestores son la evidencia del manejo adecuado ante la autoridad."]
+  ]
+},
+{
+  id: "ap", nombre: "Agua potable", sub: "Abastecimiento y control de calidad",
+  norma: "Res. 2115 de 2007 · Decreto 1575 de 2007",
+  preguntas: [
+    ["¿Qué es agua potable?",
+     "La que cumple los requisitos físicos, químicos y microbiológicos y es apta para consumo humano",
+     "Cualquier agua transparente",
+     "El agua que sale fría de la llave",
+     "El agua de lluvia recogida en canecas",
+     "El agua puede verse limpia y aun así contener microorganismos o sustancias peligrosas."],
+    ["¿Qué norma fija las características que debe cumplir el agua para consumo humano en Colombia?",
+     "Resolución 2115 de 2007", "Resolución 5109 de 2005", "Decreto 1500 de 2007", "Resolución 2184 de 2019",
+     "La Resolución 2115 de 2007 señala los valores aceptables; el Decreto 1575 de 2007 crea el sistema de protección y control."],
+    ["¿En qué rango debe estar el cloro residual libre del agua potable?",
+     "Entre 0,3 y 2,0 mg/L", "Entre 3 y 20 mg/L", "Entre 0 y 0,1 mg/L", "Entre 50 y 200 mg/L",
+     "Es el rango aceptable de la Resolución 2115 de 2007 en cualquier punto de la red."],
+    ["¿En qué rango debe estar el pH del agua potable?",
+     "Entre 6,5 y 9,0", "Entre 2,0 y 4,0", "Entre 10 y 14", "Exactamente 0",
+     "Fuera de ese rango el agua puede ser corrosiva o afectar la acción del cloro."],
+    ["¿Cada cuánto se lavan y desinfectan, como mínimo, los tanques de almacenamiento de agua?",
+     "Cada seis meses", "Cada cinco años", "Solo cuando el agua sale sucia", "Cada dos años",
+     "La frecuencia mínima es semestral, y se deja registro con fecha, productos y responsable."],
+    ["Mide el cloro residual y el resultado es 0,0 mg/L. ¿Qué hace?",
+     "Informa, se corrige la cloración antes de usar el agua y se registra la acción correctiva",
+     "Sigue trabajando normal; el agua se ve limpia",
+     "Anota 0,5 en el registro para que quede bien",
+     "Le agrega detergente al tanque",
+     "Sin cloro residual el agua no está protegida. Una desviación siempre lleva una acción correctiva registrada."],
+    ["Según la Resolución 2674 de 2013, ¿qué capacidad mínima debe tener el tanque de almacenamiento de agua?",
+     "La suficiente para un día de trabajo",
+     "La suficiente para un mes",
+     "Cinco litros por persona",
+     "No se exige tanque",
+     "El tanque garantiza el abastecimiento durante la jornada si falla el suministro."],
+    ["¿Cómo se debe manejar el hielo que entra en contacto con alimentos o bebidas?",
+     "Se elabora con agua potable y se sirve con pala o pinza limpia, en recipiente exclusivo",
+     "Se saca con el vaso o con la mano",
+     "Se puede fabricar con agua sin tratar, porque el frío mata los microbios",
+     "Se guarda junto a la carne cruda",
+     "El hielo es un alimento. La congelación no elimina los microorganismos del agua."],
+    ["¿Cuál es el resultado aceptable de coliformes totales y E. coli en el agua potable?",
+     "Cero: no deben estar presentes en 100 mL",
+     "Hasta 100 por cada mL",
+     "Cualquier cantidad, si el agua tiene cloro",
+     "Hasta 10 por cada mL",
+     "Su presencia indica contaminación, posiblemente de origen fecal."],
+    ["¿Con qué se mide el cloro residual libre?",
+     "Con un comparador colorimétrico o kit de cloro (reactivo DPD)",
+     "Con un termómetro de punzón",
+     "Con una balanza",
+     "Con la vista y el olfato",
+     "El reactivo tiñe la muestra; el color se compara con la escala para leer los mg/L."],
+    ["¿Cada cuánto se miden el cloro y el pH del agua en el establecimiento?",
+     "Con la frecuencia definida en el programa, normalmente a diario, dejando registro",
+     "Una vez al año",
+     "Solo cuando hay visita sanitaria",
+     "Nunca, eso lo hace el acueducto",
+     "El establecimiento es responsable del agua que usa, aunque provenga del acueducto."],
+    ["El agua sale turbia y con mal olor. ¿Qué hace?",
+     "Suspende su uso, informa al responsable y usa una fuente alterna de agua potable",
+     "La usa solo para lavar verduras",
+     "La deja reposar y continúa",
+     "Le agrega colorante",
+     "Un cambio en color, olor o turbiedad indica que el agua no es segura."],
+    ["El cloro residual da 3,5 mg/L. ¿Cómo se interpreta?",
+     "Es una desviación: supera el máximo de 2,0 mg/L y se debe ajustar la dosificación",
+     "Es excelente: a más cloro, mejor",
+     "Es normal, no requiere acción",
+     "Significa que el agua no tiene cloro",
+     "El exceso de cloro también incumple la norma y altera el sabor y el olor de los alimentos."],
+    ["Si existe una red de agua no potable (por ejemplo, contra incendios), ¿cómo debe estar?",
+     "En tuberías independientes e identificadas, sin conexión con la red de agua potable",
+     "Conectada a la misma tubería, para ahorrar",
+     "Sin identificación, para no confundir al personal",
+     "Disponible para lavar equipos",
+     "Las conexiones cruzadas pueden contaminar toda la red de agua potable."],
+    ["¿Cómo se guardan las mangueras después de usarlas?",
+     "Enrolladas y colgadas, sin que la boquilla toque el piso",
+     "Tiradas en el piso del área",
+     "Dentro del tanque de agua",
+     "Sumergidas en el sifón",
+     "La punta de la manguera en el piso arrastra contaminación hacia los equipos y los alimentos."],
+    ["¿Para qué se envían muestras de agua a un laboratorio?",
+     "Para verificar con análisis fisicoquímicos y microbiológicos que el agua cumple la norma",
+     "Para saber cuánta agua se consume",
+     "Para cambiarle el sabor",
+     "No es necesario si se mide el cloro",
+     "El análisis de laboratorio verifica que el programa funciona. Los informes se conservan."],
+    ["¿Cuál de estas enfermedades se puede transmitir por agua contaminada?",
+     "Cólera, hepatitis A y enfermedad diarreica aguda",
+     "Diabetes",
+     "Hipertensión",
+     "Fractura de hueso",
+     "El agua contaminada con materia fecal transporta bacterias, virus y parásitos."],
+    ["¿En cuáles de estas actividades se debe usar agua potable?",
+     "En todas: preparar alimentos, lavar manos, lavar equipos y fabricar hielo",
+     "Solo para beber",
+     "Solo para preparar jugos",
+     "Solo para lavar los pisos",
+     "Toda agua que toque alimentos, manos o superficies de contacto debe ser potable."],
+    ["Se va el agua del acueducto y el tanque está vacío. ¿Qué hace?",
+     "Aplica el plan de contingencia: usa agua potable de reserva o envasada con registro sanitario",
+     "Recoge agua del caño o de la lluvia y sigue",
+     "Trabaja sin lavarse las manos",
+     "Lava los utensilios con gaseosa",
+     "Sin agua potable no se pueden garantizar la higiene ni la inocuidad; si no hay alternativa segura, se suspende la actividad."],
+    ["¿Qué cuidado necesitan los filtros de agua?",
+     "Mantenimiento y cambio según el fabricante, con registro",
+     "Ninguno: duran toda la vida",
+     "Lavarlos con detergente de pisos",
+     "Cambiarlos solo cuando dejan de pasar agua",
+     "Un filtro saturado acumula microorganismos y contamina el agua que debía mejorar."]
+  ]
+},
+{
+  id: "ph", nombre: "Prácticas higiénicas", sub: "Manipulación de alimentos",
+  norma: "Res. 2674 de 2013, arts. 11 y 14",
+  preguntas: [
+    ["¿Cuánto tiempo debe frotarse las manos con jabón durante el lavado?",
+     "Mínimo 20 segundos", "2 segundos", "5 segundos", "No importa el tiempo",
+     "Ese es el tiempo mínimo para que el jabón desprenda la suciedad y los microorganismos."],
+    ["¿Cuándo debe lavarse las manos un manipulador?",
+     "Antes de iniciar labores, después de ir al baño, toser, tocar dinero, basura o alimentos crudos, y al cambiar de actividad",
+     "Solo al llegar al trabajo",
+     "Solo cuando se vean sucias",
+     "Solo después de almorzar",
+     "Las manos se lavan cada vez que puedan haberse contaminado."],
+    ["¿Cuál es la secuencia correcta del lavado de manos?",
+     "Mojar, aplicar jabón, frotar palmas, dorso, entre dedos y uñas hasta el antebrazo, enjuagar, secar con toalla desechable y desinfectar",
+     "Mojar, secar con el delantal y aplicar gel",
+     "Aplicar desinfectante y luego jabón",
+     "Enjuagar solo las puntas de los dedos",
+     "El secado con toalla desechable y la desinfección completan el lavado."],
+    ["¿Los guantes reemplazan el lavado de manos?",
+     "No: se lavan las manos antes de ponérselos y se cambian al romperse o cambiar de actividad",
+     "Sí, con guantes ya no hay que lavarse",
+     "Sí, si los guantes son de color azul",
+     "Sí, y se usa el mismo par todo el día",
+     "Un guante sucio contamina igual que una mano sucia."],
+    ["¿Cómo deben mantenerse las uñas?",
+     "Cortas, limpias y sin esmalte",
+     "Largas pero limpias",
+     "Con esmalte transparente",
+     "Postizas, si se usan guantes",
+     "Bajo las uñas se acumulan microorganismos y el esmalte puede desprenderse sobre el alimento."],
+    ["¿Se pueden usar anillos, reloj, pulseras o aretes durante la manipulación?",
+     "No, se retiran antes de iniciar labores",
+     "Sí, si son de oro",
+     "Sí, si se lavan con jabón",
+     "Solo el anillo de matrimonio",
+     "Las joyas acumulan suciedad, impiden un buen lavado y pueden caer en el alimento."],
+    ["Un manipulador amanece con diarrea, vómito o fiebre. ¿Qué debe hacer?",
+     "Informar a su jefe y no manipular alimentos hasta recuperarse",
+     "Trabajar normal usando tapabocas",
+     "Tomar una pastilla y seguir preparando alimentos",
+     "No decir nada para no perder el día",
+     "Una persona enferma puede transmitir la enfermedad a través de los alimentos. La Resolución 2674 obliga a reportarlo."],
+    ["Tiene una cortada pequeña en un dedo. ¿Qué corresponde?",
+     "Informar, cubrirla con una curación impermeable y usar guante o dedil",
+     "Seguir trabajando sin cubrirla",
+     "Ponerle una servilleta",
+     "Echarle sal",
+     "Las heridas contienen bacterias como Staphylococcus aureus; si está infectada, no se manipulan alimentos."],
+    ["¿Cómo debe ser el uniforme del manipulador?",
+     "De color claro, limpio, con cierres o broches en lugar de botones y sin bolsillos por encima de la cintura",
+     "De color oscuro, para que no se note la suciedad",
+     "Con muchos botones y bolsillos en el pecho",
+     "La misma ropa con la que llega de la calle",
+     "El color claro deja ver la suciedad; botones y objetos en bolsillos altos pueden caer al alimento."],
+    ["¿Cómo debe llevarse el cabello?",
+     "Recogido y cubierto por completo con malla o gorro",
+     "Suelto, si está limpio",
+     "Con la malla en la mitad de la cabeza",
+     "Con una gorra de calle",
+     "El cabello es un peligro físico y transporta microorganismos. La barba se cubre con protector."],
+    ["¿Se puede salir a la calle con el uniforme de trabajo?",
+     "No: el uniforme se usa solo dentro del establecimiento y se cambia en el vestier",
+     "Sí, para ahorrar tiempo",
+     "Sí, si es un mandado corto",
+     "Sí, si no llueve",
+     "En la calle el uniforme se contamina y lleva esa contaminación al área de proceso."],
+    ["¿Qué está prohibido en las áreas de proceso?",
+     "Comer, beber, fumar, masticar chicle y escupir",
+     "Lavarse las manos",
+     "Usar tapabocas",
+     "Limpiar los mesones",
+     "Estas prácticas llevan saliva y microorganismos de la boca a las manos y al alimento."],
+    ["¿Qué hace si necesita toser o estornudar?",
+     "Se aleja del alimento, se cubre con el antebrazo y se lava las manos",
+     "Se cubre con la mano y sigue trabajando",
+     "Tose sobre el alimento con cuidado",
+     "Se baja el tapabocas para respirar mejor",
+     "La saliva transporta bacterias. El tapabocas se usa cubriendo nariz y boca."],
+    ["¿Qué pasa con el celular durante la manipulación de alimentos?",
+     "No se usa en el área de proceso; si lo toca, se lava las manos",
+     "Se puede usar si se limpia en el delantal",
+     "Se guarda en el bolsillo de la camisa",
+     "Se apoya sobre el mesón",
+     "El celular es una de las superficies más contaminadas que toca una persona."],
+    ["¿Cómo se prueba una preparación para verificar su sabor?",
+     "Con una cuchara limpia cada vez, sin devolverla a la olla",
+     "Con el dedo",
+     "Con la misma cuchara con la que se revuelve",
+     "Directamente del cucharón",
+     "La saliva contamina toda la preparación."],
+    ["La persona que recibe dinero, ¿puede servir alimentos?",
+     "Solo si se lava las manos antes; lo ideal es que sea una persona distinta",
+     "Sí, sin problema",
+     "Sí, si usa el mismo guante para todo",
+     "Sí, si el billete es nuevo",
+     "El dinero pasa por muchas manos y transporta microorganismos."],
+    ["¿Cada cuánto debe hacerse el reconocimiento médico el manipulador?",
+     "Por lo menos una vez al año y después de ausentarse por una enfermedad infecciosa",
+     "Una sola vez en la vida",
+     "Cada diez años",
+     "Solo si el jefe lo pide",
+     "La Resolución 2674 exige certificación médica de aptitud para manipular alimentos."],
+    ["¿Cómo debe ser el calzado de trabajo?",
+     "Cerrado, de material resistente e impermeable y de tacón bajo",
+     "Sandalias, para estar fresco",
+     "De tela, tipo tenis de calle",
+     "Cualquiera, si está limpio",
+     "El calzado cerrado protege al trabajador y se puede lavar y desinfectar."],
+    ["¿Se permite usar maquillaje, perfume o lociones fuertes durante la manipulación?",
+     "No, porque pueden contaminar el alimento y transmitirle olores",
+     "Sí, en poca cantidad",
+     "Sí, si es de buena marca",
+     "Solo el perfume",
+     "Son contaminantes químicos y físicos."],
+    ["¿Qué debe cumplir un visitante que entra al área de proceso?",
+     "Las mismas prácticas higiénicas: bata, gorro, tapabocas y lavado de manos",
+     "Nada, porque no manipula alimentos",
+     "Solo saludar de lejos",
+     "Solo quitarse el reloj",
+     "Toda persona que ingrese puede contaminar. Las normas aplican para todos."]
+  ]
+},
+{
+  id: "es", nombre: "Educación sanitaria", sub: "Peligros, ETA y temperaturas",
+  norma: "Res. 2674 de 2013, arts. 12 y 13",
+  preguntas: [
+    ["¿Qué significa la sigla ETA?",
+     "Enfermedad Transmitida por Alimentos",
+     "Estado Técnico del Alimento",
+     "Evaluación de Temperatura Ambiente",
+     "Entidad Territorial de Aseo",
+     "Las ETA se producen al consumir alimentos o agua contaminados."],
+    ["¿Qué es la inocuidad de los alimentos?",
+     "La garantía de que el alimento no causará daño al consumidor",
+     "Que el alimento tenga buen sabor",
+     "Que el alimento sea barato",
+     "Que el alimento tenga buena presentación",
+     "Un alimento puede ser sabroso y verse bien, y aun así no ser inocuo."],
+    ["¿Cuáles son los tres tipos de peligros que pueden contaminar un alimento?",
+     "Biológicos, químicos y físicos",
+     "Grandes, medianos y pequeños",
+     "Dulces, salados y ácidos",
+     "Fríos, tibios y calientes",
+     "Biológicos: microorganismos y parásitos. Químicos: sustancias. Físicos: objetos extraños."],
+    ["¿Cuál de estos es un peligro físico?",
+     "Un trozo de vidrio o un cabello en la comida",
+     "La bacteria Salmonella",
+     "Residuos de desinfectante",
+     "Un virus",
+     "Los peligros físicos son objetos extraños que pueden causar heridas, atoramiento o rechazo."],
+    ["¿Cuál de estos es un peligro químico?",
+     "Restos de detergente en una olla mal enjuagada",
+     "Una piedra en el arroz",
+     "Un parásito en la carne",
+     "Una uña postiza",
+     "Detergentes, desinfectantes, plaguicidas y lubricantes son contaminantes químicos."],
+    ["¿Cuál es la zona de peligro de temperatura, en la que las bacterias se multiplican con rapidez?",
+     "Entre 5 °C y 60 °C", "Entre −18 °C y 0 °C", "Entre 60 °C y 100 °C", "Por debajo de −18 °C",
+     "Los alimentos perecederos deben pasar el menor tiempo posible en ese rango."],
+    ["¿A qué temperatura deben mantenerse los alimentos refrigerados?",
+     "Entre 0 °C y 4 °C", "Entre 10 °C y 15 °C", "A 25 °C", "A −18 °C",
+     "La Resolución 2674 fija la refrigeración en 4 °C ± 2 °C. El frío no mata las bacterias: frena su crecimiento."],
+    ["¿A qué temperatura deben mantenerse los alimentos congelados?",
+     "A −18 °C o menos", "A 0 °C", "A 4 °C", "A −2 °C",
+     "A esa temperatura se detiene la multiplicación de los microorganismos."],
+    ["¿A qué temperatura se deben mantener los alimentos calientes listos para servir?",
+     "A 60 °C o más", "A 30 °C", "A 45 °C", "A temperatura ambiente",
+     "Por encima de 60 °C el alimento está fuera de la zona de peligro."],
+    ["¿Qué es la contaminación cruzada?",
+     "El paso de contaminantes de un alimento, superficie o utensilio contaminado a un alimento limpio o listo para consumir",
+     "Mezclar dos recetas distintas",
+     "Cocinar con dos estufas",
+     "Guardar alimentos en dos neveras",
+     "Puede ser directa (alimento con alimento) o indirecta (manos, tablas, cuchillos, paños)."],
+    ["¿Cuál es un ejemplo de contaminación cruzada?",
+     "Picar ensalada en la tabla donde se cortó pollo crudo, sin lavarla ni desinfectarla",
+     "Guardar la leche en la nevera",
+     "Lavar las frutas con agua potable",
+     "Cocinar bien la carne",
+     "Los microorganismos del alimento crudo pasan al alimento que no tendrá cocción."],
+    ["¿Cómo se organizan los alimentos dentro de la nevera?",
+     "Cocidos y listos para consumir arriba, crudos abajo, todos tapados",
+     "Crudos arriba y cocidos abajo",
+     "Todos juntos y destapados",
+     "Como quepan",
+     "Así los jugos de las carnes crudas no gotean sobre los alimentos listos."],
+    ["¿Cuál es la forma segura de descongelar un alimento?",
+     "En refrigeración, con anticipación",
+     "Sobre el mesón, toda la noche",
+     "Al sol",
+     "En agua caliente estancada",
+     "A temperatura ambiente la superficie del alimento entra en la zona de peligro mientras el centro sigue congelado."],
+    ["¿Qué temperatura interna de referencia debe alcanzar el pollo durante la cocción?",
+     "74 °C", "40 °C", "50 °C", "55 °C",
+     "Es la temperatura interna de referencia internacional para destruir patógenos como Salmonella en aves."],
+    ["¿Qué necesitan las bacterias para multiplicarse?",
+     "Nutrientes, humedad, temperatura adecuada y tiempo",
+     "Sal, frío y sequedad",
+     "Solo luz",
+     "Solo oxígeno",
+     "Controlando la temperatura y el tiempo se frena su crecimiento."],
+    ["¿Cuáles son alimentos de mayor riesgo en salud pública?",
+     "Carnes, pollo, pescado, leche y sus derivados, huevos y preparaciones listas",
+     "Sal, azúcar y panela",
+     "Arroz y pasta crudos",
+     "Enlatados cerrados",
+     "Son ricos en proteína y agua, lo que favorece el crecimiento de microorganismos."],
+    ["¿Qué significa el sistema PEPS?",
+     "Primero en Entrar, Primero en Salir",
+     "Producto Especial Para Servir",
+     "Primero Empacar, Primero Sellar",
+     "Proceso de Enfriamiento y Preparación Segura",
+     "Se usa primero lo más antiguo o lo que vence antes, para evitar productos vencidos."],
+    ["¿Un alimento contaminado siempre se ve, huele o sabe mal?",
+     "No: puede verse, oler y saber normal y aun así enfermar",
+     "Sí, siempre huele mal",
+     "Sí, siempre cambia de color",
+     "Sí, siempre sabe ácido",
+     "Los microorganismos que enferman no siempre alteran el alimento. Por eso se controla el proceso, no solo la apariencia."],
+    ["¿Cuáles son síntomas frecuentes de una ETA?",
+     "Diarrea, vómito, dolor abdominal y fiebre",
+     "Dolor de muela",
+     "Caída del cabello",
+     "Dolor de rodilla",
+     "En niños, adultos mayores, embarazadas y personas enfermas pueden ser graves."],
+    ["Como regla general, ¿cuánto tiempo máximo puede estar un alimento perecedero en la zona de peligro?",
+     "2 horas", "8 horas", "12 horas", "Un día completo",
+     "Pasado ese tiempo, las bacterias pueden haber alcanzado cantidades peligrosas."]
+  ]
+},
+{
+  id: "ns", nombre: "Normatividad sanitaria", sub: "Marco legal colombiano",
+  norma: "Ley 9 de 1979 · Res. 2674 de 2013",
+  preguntas: [
+    ["¿Qué establece la Resolución 2674 de 2013?",
+     "Los requisitos sanitarios para fabricar, procesar, preparar, envasar, almacenar, transportar, distribuir y comercializar alimentos",
+     "Los impuestos de los restaurantes",
+     "El salario de los manipuladores",
+     "Los horarios de atención al público",
+     "Es la norma base de las Buenas Prácticas de Manufactura en Colombia."],
+    ["¿Qué es la Ley 9 de 1979?",
+     "El Código Sanitario Nacional",
+     "El Código de Tránsito",
+     "La ley del consumidor",
+     "El Código de Comercio",
+     "Dicta las medidas sanitarias generales del país; su Título V trata de los alimentos."],
+    ["¿Qué significa INVIMA?",
+     "Instituto Nacional de Vigilancia de Medicamentos y Alimentos",
+     "Instituto Nacional de Vías y Mantenimiento",
+     "Inspección Nacional de Vivienda y Medio Ambiente",
+     "Instituto de Vigilancia de Mataderos",
+     "Es la autoridad sanitaria nacional en materia de alimentos y medicamentos."],
+    ["¿Quién inspecciona, vigila y controla los restaurantes y expendios de alimentos del municipio?",
+     "La entidad territorial de salud (Secretaría de Salud)",
+     "La Policía de Tránsito",
+     "La Cámara de Comercio",
+     "La empresa de energía",
+     "Las secretarías de salud vigilan la preparación, el expendio y el transporte; el INVIMA, las fábricas y plantas de beneficio."],
+    ["¿Cuántas horas de capacitación al año debe tener, como mínimo, el plan de capacitación del personal manipulador?",
+     "10 horas", "1 hora", "2 horas", "100 horas",
+     "La Resolución 2674 exige un plan de capacitación continuo y permanente de por lo menos 10 horas anuales."],
+    ["¿Qué sistema promueve el Decreto 60 de 2002?",
+     "El Sistema de Análisis de Peligros y Puntos de Control Crítico (HACCP)",
+     "El sistema de facturación electrónica",
+     "El sistema de transporte masivo",
+     "El sistema de riesgos laborales",
+     "El decreto promueve la aplicación del HACCP en las fábricas de alimentos y define sus prerrequisitos."],
+    ["¿Qué regula el Decreto 1500 de 2007?",
+     "El sistema oficial de inspección, vigilancia y control de la carne y los productos cárnicos comestibles",
+     "El rotulado de bebidas",
+     "La calidad del agua",
+     "El manejo de residuos",
+     "Aplica desde la producción primaria hasta el expendio de carne."],
+    ["¿Qué reglamenta la Resolución 5109 de 2005?",
+     "El rotulado o etiquetado de los alimentos envasados",
+     "La calidad del agua potable",
+     "El uso de plaguicidas",
+     "El transporte de carne",
+     "Define la información que debe llevar la etiqueta: nombre, ingredientes, lote, vencimiento, entre otros."],
+    ["¿Qué norma establece el código de colores para separar los residuos?",
+     "Resolución 2184 de 2019", "Resolución 2674 de 2013", "Decreto 60 de 2002", "Ley 9 de 1979",
+     "Blanco, negro y verde, obligatorio en todo el país."],
+    ["¿Qué requiere un alimento de alto riesgo para poder comercializarse?",
+     "Registro sanitario",
+     "Solo una factura",
+     "Un permiso de la Policía",
+     "Ningún documento",
+     "Según el riesgo: alto, registro sanitario; medio, permiso sanitario; bajo, notificación sanitaria."],
+    ["¿Qué establece la Resolución 719 de 2015?",
+     "La clasificación de los alimentos según su riesgo en salud pública",
+     "El precio de los alimentos",
+     "El uniforme de los manipuladores",
+     "Los colores de las canecas",
+     "Clasifica los alimentos en riesgo alto, medio y bajo."],
+    ["¿Qué reglamenta la Resolución 810 de 2021?",
+     "El etiquetado nutricional y frontal de advertencia de los alimentos envasados",
+     "El lavado de tanques",
+     "El control de plagas",
+     "La capacitación de manipuladores",
+     "De ahí provienen los sellos frontales de advertencia de los alimentos envasados."],
+    ["Según la Resolución 2674 de 2013, ¿qué programas debe incluir como mínimo el plan de saneamiento?",
+     "Limpieza y desinfección, desechos sólidos, control de plagas y abastecimiento de agua potable",
+     "Ventas, compras, nómina y publicidad",
+     "Solo limpieza y desinfección",
+     "Mantenimiento, calibración y transporte",
+     "Son los cuatro programas del artículo 26."],
+    ["¿Qué son las Buenas Prácticas de Manufactura (BPM)?",
+     "Los principios básicos y prácticas generales de higiene para que los alimentos se produzcan en condiciones sanitarias adecuadas",
+     "Las recetas del establecimiento",
+     "Las técnicas para vender más",
+     "Un programa de ejercicio para el personal",
+     "Su objetivo es disminuir los riesgos propios de la producción de alimentos."],
+    ["Después de una visita de inspección, ¿qué concepto sanitario puede emitir la autoridad?",
+     "Favorable, favorable con requerimientos o desfavorable",
+     "Bueno, regular o malo",
+     "Aprobado con medalla",
+     "Solo favorable",
+     "El concepto depende del cumplimiento encontrado en la visita."],
+    ["¿Cuál de estas es una medida sanitaria de seguridad que puede aplicar la autoridad?",
+     "La clausura temporal del establecimiento o el decomiso de productos",
+     "Un descuento en impuestos",
+     "Un diploma para el personal",
+     "El cambio de nombre del negocio",
+     "La Ley 9 de 1979 faculta a la autoridad para proteger la salud pública de manera inmediata."],
+    ["Según la Resolución 2674 de 2013, ¿quién es manipulador de alimentos?",
+     "Toda persona que interviene directamente, así sea de forma ocasional, en la fabricación, preparación, envase, almacenamiento, transporte o expendio",
+     "Solo el cocinero principal",
+     "Solo quien tiene título profesional",
+     "Únicamente el dueño",
+     "Meseros, auxiliares, transportadores y vendedores que tocan alimentos también lo son."],
+    ["¿Cuál es la vigencia del registro, el permiso y la notificación sanitaria de alimentos?",
+     "Registro: 5 años · Permiso: 7 años · Notificación: 10 años",
+     "Todos duran 1 año",
+     "Todos son indefinidos",
+     "Registro: 10 años · Permiso: 1 año · Notificación: 2 años",
+     "Son las vigencias que fija la Resolución 2674 de 2013 para cada autorización de comercialización."],
+    ["¿Qué reglamenta el Decreto 616 de 2006?",
+     "Los requisitos que debe cumplir la leche para consumo humano",
+     "El rotulado de la carne",
+     "El uso de aceites de cocina",
+     "El transporte de pasajeros",
+     "Es el reglamento técnico de la leche: obtención, procesamiento, transporte y comercialización."],
+    ["¿Qué norma regula el uso y manejo de plaguicidas?",
+     "Decreto 1843 de 1991", "Resolución 5109 de 2005", "Resolución 810 de 2021", "Decreto 616 de 2006",
+     "Por eso las aplicaciones las realizan empresas autorizadas por la autoridad sanitaria."]
+  ]
+},
+{
+  id: "ps", nombre: "Plan de saneamiento", sub: "Programas, registros y verificación",
+  norma: "Res. 2674 de 2013, art. 26",
+  preguntas: [
+    ["¿Qué es el plan de saneamiento?",
+     "El conjunto de programas con objetivos y procedimientos para disminuir los riesgos de contaminación de los alimentos",
+     "El plano de las tuberías",
+     "El menú de la semana",
+     "La lista de precios de los químicos",
+     "Todo establecimiento de alimentos debe implantarlo y desarrollarlo."],
+    ["¿Cuántos programas mínimos tiene el plan de saneamiento?",
+     "Cuatro: limpieza y desinfección, desechos sólidos, control de plagas y agua potable",
+     "Uno: limpieza",
+     "Dos: limpieza y fumigación",
+     "Diez programas obligatorios",
+     "Así lo establece el artículo 26 de la Resolución 2674 de 2013."],
+    ["¿Cómo debe estar el plan de saneamiento?",
+     "Escrito, a disposición de la autoridad sanitaria, con procedimientos, cronogramas, registros, listas de chequeo y responsables",
+     "En la memoria del administrador",
+     "Guardado bajo llave, sin que nadie lo lea",
+     "Solo en una cartelera",
+     "Un plan que no está escrito y aplicado no se puede demostrar."],
+    ["¿Quién ejecuta el plan de saneamiento?",
+     "Todo el personal, según las funciones asignadas a cada uno",
+     "Solo la empresa fumigadora",
+     "Únicamente el asesor externo",
+     "La autoridad sanitaria",
+     "La dirección aporta los recursos; cada trabajador cumple los procedimientos de su área."],
+    ["¿Para qué sirven los registros?",
+     "Son la evidencia de que las actividades se realizaron y permiten verificar el cumplimiento",
+     "Para gastar papel",
+     "Para decorar la oficina",
+     "No sirven para nada",
+     "También permiten detectar fallas repetidas y tomar decisiones."],
+    ["¿Cómo se diligencia correctamente un registro?",
+     "En el momento de la actividad, con letra clara, sin tachones ni espacios en blanco, con fecha y firma",
+     "Con lápiz, para poder borrar",
+     "Al final de la semana, de memoria",
+     "Dejando casillas vacías para llenarlas después",
+     "Un registro alterado o incompleto pierde validez."],
+    ["¿Qué es una acción correctiva?",
+     "La acción que se toma para eliminar la causa de una falla y evitar que se repita",
+     "Un regaño al trabajador",
+     "Un formato en blanco",
+     "Una sanción de la autoridad",
+     "Toda desviación debe tener una acción correctiva, un responsable y un registro."],
+    ["¿Cuál es la diferencia entre monitoreo y verificación?",
+     "El monitoreo es el control rutinario de cada actividad; la verificación comprueba que el programa funciona",
+     "Son exactamente lo mismo",
+     "El monitoreo lo hace el laboratorio y la verificación el operario",
+     "La verificación se hace antes de escribir el programa",
+     "Ejemplo: medir cloro a diario es monitoreo; el análisis de laboratorio es verificación."],
+    ["¿Qué es la inspección preoperacional?",
+     "La revisión de la limpieza de áreas y equipos antes de iniciar la producción",
+     "La revisión de las ventas del día anterior",
+     "El conteo del dinero de la caja",
+     "La limpieza al terminar la jornada",
+     "Si el área o el equipo no están limpios, no se inicia el proceso hasta corregir."],
+    ["¿Para qué sirve una lista de chequeo?",
+     "Para verificar punto por punto el cumplimiento de los requisitos",
+     "Para anotar los pedidos de los clientes",
+     "Para registrar las ventas",
+     "Para llevar la asistencia",
+     "Permite revisar siempre los mismos aspectos y dejar constancia."],
+    ["El procedimiento escrito dice una cosa y en la práctica se hace otra. ¿Qué corresponde?",
+     "Corregir: se cumple lo escrito o se actualiza el documento para que refleje la práctica correcta",
+     "Dejarlo así, nadie lo revisa",
+     "Esconder el documento",
+     "Hacer cada uno lo que le parezca",
+     "El documento y la práctica deben coincidir; esa diferencia es un hallazgo frecuente en las visitas."],
+    ["¿Qué define un cronograma dentro de un programa?",
+     "Qué actividad se hace, con qué frecuencia y quién es el responsable",
+     "El sueldo de cada trabajador",
+     "Los días festivos del año",
+     "El precio de los productos",
+     "Permite programar y verificar que nada se quede sin hacer."],
+    ["Aparecen moscas en la zona de basuras. ¿Qué programas se deben revisar?",
+     "Residuos sólidos y control de plagas",
+     "Agua potable y capacitación",
+     "Solo mantenimiento",
+     "Ninguno: es normal",
+     "Los programas se relacionan: los residuos mal manejados atraen plagas."],
+    ["¿Qué pasa si se diligencian en un solo día los registros de toda la semana?",
+     "Los registros pierden validez porque no reflejan lo que realmente ocurrió",
+     "Nada, es más práctico",
+     "Queda mejor presentado",
+     "Se ahorra tinta",
+     "Además de ser un incumplimiento, impide detectar las fallas a tiempo."],
+    ["¿Quién verifica oficialmente el cumplimiento del plan de saneamiento?",
+     "La autoridad sanitaria competente, en sus visitas de inspección",
+     "Los clientes",
+     "Los proveedores",
+     "Los vecinos",
+     "Por eso debe estar escrito y disponible en todo momento."],
+    ["¿Cuándo se debe actualizar el plan de saneamiento?",
+     "Cuando cambian procesos, instalaciones, productos químicos o normas, y en las revisiones periódicas",
+     "Nunca, se escribe una sola vez",
+     "Solo cuando se pierde",
+     "Cada vez que cambia el clima",
+     "El plan debe describir la realidad actual del establecimiento."],
+    ["¿Por qué el personal debe conocer los procedimientos del plan de saneamiento?",
+     "Porque es quien los ejecuta: sin capacitación, el plan se queda en el papel",
+     "No necesita conocerlos",
+     "Solo para presentar un examen",
+     "Porque lo exige el proveedor",
+     "Cada programa incluye la capacitación del personal responsable."],
+    ["¿Cuál es un ejemplo de indicador de un programa?",
+     "Porcentaje de actividades de limpieza cumplidas frente a las programadas",
+     "El color del uniforme",
+     "El nombre del administrador",
+     "La marca del desinfectante",
+     "Los indicadores miden si el programa se cumple y si es eficaz."],
+    ["El registro muestra cloro residual de 0,1 mg/L en el agua. ¿Qué significa?",
+     "Es una desviación del programa de agua potable que exige acción correctiva",
+     "Es un resultado normal",
+     "Es un problema del programa de plagas",
+     "No hay que hacer nada",
+     "El mínimo aceptable es 0,3 mg/L."],
+    ["¿Qué tienen en común los cuatro programas del plan de saneamiento?",
+     "Todos tienen objetivos, procedimientos, responsables, registros y verificación",
+     "Todos los ejecuta una empresa externa",
+     "Ninguno necesita registros",
+     "Todos se hacen una vez al año",
+     "Comparten la misma lógica: planear, ejecutar, registrar, verificar y corregir."]
+  ]
+},
+{
+  id: "pp", nombre: "Programas prerrequisito", sub: "La base del sistema HACCP",
+  norma: "Decreto 60 de 2002, art. 5",
+  preguntas: [
+    ["¿Qué son los programas prerrequisito?",
+     "Las condiciones y actividades básicas de higiene que deben funcionar antes de implementar el HACCP",
+     "Los requisitos para contratar personal",
+     "Las recetas básicas de la cocina",
+     "Los trámites para abrir un negocio",
+     "Controlan los peligros generales del ambiente y la operación."],
+    ["¿Cuáles son prerrequisitos del HACCP según el Decreto 60 de 2002?",
+     "BPM, capacitación, mantenimiento preventivo, calibración, saneamiento, control de proveedores, plan de muestreo y trazabilidad",
+     "Publicidad, ventas y contabilidad",
+     "Solo limpieza y fumigación",
+     "Decoración, música y atención al cliente",
+     "Son los programas del artículo 5 del Decreto 60 de 2002."],
+    ["¿Qué significa HACCP?",
+     "Análisis de Peligros y Puntos de Control Crítico",
+     "Higiene, Aseo, Control y Calidad del Producto",
+     "Herramienta de Aseguramiento de Compras y Costos de Producción",
+     "Habilitación de Cocinas y Comedores Públicos",
+     "Es un sistema preventivo que identifica, evalúa y controla los peligros."],
+    ["¿Se puede implementar el HACCP sin tener los prerrequisitos funcionando?",
+     "No: los prerrequisitos son la base del sistema",
+     "Sí, el HACCP los reemplaza",
+     "Sí, si la empresa es pequeña",
+     "Sí, si hay un ingeniero",
+     "Sin BPM y saneamiento, habría demasiados peligros sin control."],
+    ["¿Qué es el mantenimiento preventivo?",
+     "El que se programa y se ejecuta antes de que el equipo falle",
+     "El que se hace cuando el equipo ya se dañó",
+     "Pintar las paredes",
+     "Cambiar los equipos cada año",
+     "Evita daños que contaminen el alimento, como piezas sueltas, óxido o fugas."],
+    ["¿Para qué se calibran o verifican termómetros y balanzas?",
+     "Para asegurar que sus mediciones son confiables",
+     "Para que se vean nuevos",
+     "Para que pesen menos",
+     "No es necesario hacerlo",
+     "Una medición errada lleva a decisiones equivocadas sobre la inocuidad."],
+    ["Al verificar un termómetro de punzón en agua con hielo, ¿cuánto debe marcar?",
+     "0 °C", "10 °C", "25 °C", "−18 °C",
+     "La mezcla de agua y hielo es el punto de referencia más usado. Se acepta una diferencia de ±1 °C."],
+    ["¿Qué es la trazabilidad?",
+     "La capacidad de seguir el rastro de un alimento desde su origen hasta el consumidor",
+     "El transporte de los alimentos",
+     "El precio del producto",
+     "El tiempo de cocción",
+     "Permite identificar el origen de un problema y retirar el producto afectado."],
+    ["¿Qué significa conocer «un paso atrás y un paso adelante»?",
+     "Saber quién suministró cada producto o lote y a quién se le entregó",
+     "Caminar con cuidado en la cocina",
+     "Repetir el proceso dos veces",
+     "Guardar el producto dos días",
+     "Se logra con registros de recepción, producción y despacho."],
+    ["¿En qué consiste el control de proveedores?",
+     "En seleccionarlos, evaluarlos y verificar en la recepción que cumplen los requisitos sanitarios",
+     "En comprarle al más barato",
+     "En cambiar de proveedor cada semana",
+     "En recibir sin revisar, para ahorrar tiempo",
+     "La inocuidad empieza con materias primas seguras."],
+    ["¿Qué se verifica al recibir un alimento refrigerado?",
+     "Temperatura, rotulado, fecha de vencimiento, estado del empaque y condiciones del vehículo",
+     "Solo el precio",
+     "Solo la cantidad",
+     "Nada, si el proveedor es conocido",
+     "Cada recepción se registra, sea aceptación o rechazo."],
+    ["Llega carne fresca con una temperatura interna de 12 °C. ¿Qué hace?",
+     "La rechaza y registra el motivo",
+     "La recibe y la congela rápido",
+     "La recibe con descuento",
+     "La deja reposar al ambiente",
+     "Se rompió la cadena de frío; enfriarla después no elimina las bacterias que ya crecieron."],
+    ["¿Qué información debe traer el rótulo de un alimento envasado?",
+     "Nombre, ingredientes, contenido neto, fabricante, lote, fecha de vencimiento y registro sanitario",
+     "Solo el nombre",
+     "Solo el precio",
+     "Solo una fotografía del producto",
+     "Un producto sin rótulo o sin registro sanitario se rechaza."],
+    ["¿Qué es un lote?",
+     "Una cantidad de producto elaborada en condiciones esencialmente iguales",
+     "Un terreno",
+     "Un descuento por cantidad",
+     "Un tipo de empaque",
+     "El número de lote es la clave para la trazabilidad."],
+    ["¿Para qué sirve el plan de muestreo?",
+     "Para verificar con análisis de laboratorio que productos, superficies, agua y manipuladores cumplen",
+     "Para dar degustaciones a los clientes",
+     "Para regalar muestras",
+     "Para probar recetas nuevas",
+     "Es una herramienta de verificación de todo el sistema."],
+    ["¿Qué es el retiro de producto?",
+     "El procedimiento para sacar del mercado un producto que puede no ser inocuo",
+     "Sacar el producto de la nevera",
+     "Vender con descuento",
+     "Cambiar la etiqueta",
+     "Depende de una buena trazabilidad y se ensaya con simulacros."],
+    ["¿Qué tipo de lubricante se usa en equipos que pueden entrar en contacto con alimentos?",
+     "De grado alimenticio",
+     "Aceite de motor",
+     "Grasa común de ferretería",
+     "Cualquiera que esté disponible",
+     "Un lubricante no apto es un contaminante químico."],
+    ["Después de un mantenimiento, ¿qué se hace antes de volver a usar el equipo?",
+     "Verificar que no queden piezas ni herramientas, y lavarlo y desinfectarlo",
+     "Usarlo de inmediato",
+     "Cubrirlo con una tela",
+     "Esperar al día siguiente",
+     "Tornillos, limaduras y grasa son peligros físicos y químicos."],
+    ["¿Qué es un Punto de Control Crítico (PCC)?",
+     "Una etapa en la que se aplica un control esencial para prevenir, eliminar o reducir un peligro a un nivel aceptable",
+     "El lugar más sucio de la planta",
+     "El punto de venta",
+     "La entrada del personal",
+     "Ejemplo: la cocción, cuando es la única etapa que elimina un patógeno."],
+    ["Un cliente informa que se enfermó después de consumir un producto. ¿Qué se hace?",
+     "Registrar la queja, investigar con la trazabilidad e informar al responsable",
+     "Ignorarlo",
+     "Decirle que es imposible",
+     "Botar los registros",
+     "La queja se investiga para identificar el lote y evitar más afectados; si se sospecha una ETA, se informa a la autoridad sanitaria."]
+  ]
+}
 ];
-var qs,ix,sc,ok,per,ans,nm,gp,ms,stk;
-function start(){nm=document.getElementById('nm').value.trim();if(!nm){document.getElementById('nm').focus();return;}gp=document.getElementById('gp').value.trim();qs=Q.slice().sort(function(a,b){return a.l-b.l});ix=0;sc=0;ok=0;stk=0;ms=0;per={};Object.keys(TP).forEach(function(k){per[k]=[0,0]});sh('s2');rn();}
-function sh(id){var a=document.querySelectorAll('.s');for(var i=0;i<a.length;i++)a[i].classList.remove('on');document.getElementById(id).classList.add('on');scrollTo(0,0);}
-function rn(){var q=qs[ix];ans=false;document.getElementById('ct').textContent='Pregunta '+(ix+1)+' de '+qs.length;document.getElementById('sc').textContent='· '+sc;document.getElementById('pg').style.width=(ix/qs.length*100)+'%';document.getElementById('lv').textContent='Nivel '+q.l;var t=TP[q.t];document.getElementById('lv').style.background=t[1];document.getElementById('qt').textContent=t[0]+' — '+q.q;var h='';for(var i=0;i<q.o.length;i++)h+='<button class="o" onclick="pk('+i+')">'+String.fromCharCode(65+i)+'. '+q.o[i]+'</button>';document.getElementById('op').innerHTML=h;document.getElementById('fb').className='f hide';document.getElementById('nx').className='bt hide';}
-function pk(i){if(ans)return;ans=true;var q=qs[ix];var g=i===q.a;per[q.t][1]++;var b=document.querySelectorAll('#op .o');for(var j=0;j<b.length;j++){b[j].disabled=true;if(j===q.a)b[j].className='o ok';if(j===i&&!g)b[j].className='o no';}var add=0;if(g){ok++;per[q.t][0]++;stk++;if(stk>ms)ms=stk;add=100*q.l+(stk>=2?25*(stk-1):0);sc+=add;}else stk=0;document.getElementById('sc').textContent='· '+sc;var f=document.getElementById('fb');f.className='f '+(g?'y':'n');f.innerHTML='<b>'+(g?'✓ ¡Correcto! +'+add+' pts':'✗ Incorrecto')+'</b><p style="margin-top:5px">'+q.e+'</p>';var n=document.getElementById('nx');n.className='bt';n.textContent=(ix+1<qs.length)?'Siguiente ➜':'Ver resultados 🎉';}
-function next(){if(ix+1<qs.length){ix++;rn();}else fin();}
-function fin(){var n=qs.length,pc=Math.round(ok/n*100),gd=(pc/100*5).toFixed(1),rk,md;if(pc>=90){rk="Maestro de la Inocuidad";md="🏆";}else if(pc>=75){rk="Experto";md="🥇";}else if(pc>=60){rk="Competente";md="🥈";}else if(pc>=40){rk="Aprendiz";md="🥉";}else{rk="Principiante";md="🌱";}document.getElementById('md').textContent=md;document.getElementById('rk').textContent=rk;document.getElementById('wh').textContent=nm+(gp?' · '+gp:'');document.getElementById('pc').textContent=pc+'%';document.getElementById('gd').textContent=gd;document.getElementById('pt').textContent=sc;document.getElementById('dt').textContent=ok+' de '+n+' correctas · racha máxima 🔥 '+ms;var msg;if(pc>=75)msg="¡Muy buen dominio de la inocuidad! Sigue así.";else if(pc>=60)msg="Buen avance; refuerza algunos temas.";else if(pc>=40)msg="Necesitas reforzar conceptos clave de la Res. 2674/2013.";else msg="Repasa los fundamentos de inocuidad y BPM.";document.getElementById('rf').textContent=msg;window._R={nm:nm,gp:gp,pc:pc,gd:gd,sc:sc,rk:rk,ok:ok,n:n,ms:ms,msg:msg};sh('s3');}
-function mail(){var r=window._R;var b="Reto Inocuidad - Heaven Food
 
-Estudiante: "+r.nm+"
-Grupo: "+(r.gp||"N/A")+"
-Fecha: "+new Date().toLocaleString()+"
 
-Aciertos: "+r.ok+"/"+r.n+" ("+r.pc+"%)
-Nota 0-5: "+r.gd+"
-Nivel: "+r.rk+"
-Puntos: "+r.sc+"
-Racha: "+r.ms+"
+/* ============================================================================
+ * RECURSOS GRÁFICOS
+ * ==========================================================================*/
+const SELLO_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">'
+ + '<circle cx="100" cy="100" r="92" fill="none" stroke="#C9A84C" stroke-width="12" stroke-dasharray="9 5.45"/>'
+ + '<circle cx="100" cy="100" r="88" fill="#C9A84C"/><circle cx="100" cy="100" r="78" fill="#FBF6E6" stroke="#8A6D1F" stroke-width="2"/>'
+ + '<path d="M100 30l17 6v15c0 12-8 20-17 24-9-4-17-12-17-24V36z" fill="#2E7D32"/>'
+ + '<path d="M100 66c-1-10 2-18 10-23-1 9-3 15-10 23zm0 0c-6-5-9-11-9-18 6 3 9 9 9 18z" fill="#fff"/>'
+ + '<path d="M80 44c-12-6-24-5-34 2 8 0 13 2 17 6 6 5 12 6 18 4zm40 0c12-6 24-5 34 2-8 0-13 2-17 6-6 5-12 6-18 4z" fill="#fff" stroke="#8A6D1F" stroke-width="1.5"/>'
+ + '<path d="M6 84h188l-12 16 12 16H6l12-16z" fill="#9E0B0B"/>'
+ + '<text x="100" y="108" text-anchor="middle" font-family="Georgia,Times New Roman,serif" font-weight="700" font-size="22" letter-spacing="1.5" fill="#fff">HEAVEN FOOD</text>'
+ + '<g fill="#1C1614"><path d="M100 124l2.4 5 5.4.6-4 3.7 1.1 5.4-4.9-2.8-4.9 2.8 1.1-5.4-4-3.7 5.4-.6z"/><path d="M76 124l2 4.2 4.6.5-3.4 3.1.9 4.6-4.1-2.4-4.1 2.4.9-4.6-3.4-3.1 4.6-.5zm48 0l2 4.2 4.6.5-3.4 3.1.9 4.6-4.1-2.4-4.1 2.4.9-4.6-3.4-3.1 4.6-.5z"/></g>'
+ + '<text x="100" y="158" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="10.5" letter-spacing="1" fill="#1C1614">CALIDAD E INOCUIDAD</text></svg>';
 
-"+r.msg;location.href="mailto:"+T+"?subject="+encodeURIComponent("Resultado "+r.nm+" ("+r.pc+"%)")+"&body="+encodeURIComponent(b);}
-</script></body></html>
+const ICONOS = {
+  ld: '<path d="M9 3h5v3H9z"/><path d="M11.5 6v2"/><path d="M8 8h7l1 3v9a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-9z"/><path d="M17 4.5h2.5M17 2l2-1M17 7l2 1"/>',
+  cp: '<ellipse cx="12" cy="14" rx="4" ry="6"/><circle cx="12" cy="6" r="2"/><path d="M8 11L4 9M8 14H3.5M8 17l-4 2M16 11l4-2M16 14h4.5M16 17l4 2M11 4.2L9.5 2M13 4.2L14.5 2"/>',
+  rs: '<path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/>',
+  ap: '<path d="M12 3c-3.5 4.5-6 7.6-6 11a6 6 0 0 0 12 0c0-3.4-2.5-6.500-6-11z"/><path d="M9.500 14.500a2.500 2.500 0 0 0 2.500 2.500"/>',
+  ph: '<path d="M8 13V6a1.500 1.500 0 0 1 3 0v5"/><path d="M11 11V4.500a1.500 1.500 0 0 1 3 0V11"/><path d="M14 11V6.500a1.500 1.500 0 0 1 3 0V14c0 4-2.500 7-6 7-3 0-4.500-1.500-6-4.500L3.500 13.500a1.400 1.400 0 0 1 2.400-1.400L8 14.500"/>',
+  es: '<path d="M12 6c-2-1.500-5-2-8-2v14c3 0 6 .500 8 2 2-1.500 5-2 8-2V4c-3 0-6 .500-8 2z"/><path d="M12 6v14"/>',
+  ns: '<path d="M12 3v18M7 21h10M5 7h14"/><path d="M5 7l-3 7a3 3 0 0 0 6 0z"/><path d="M19 7l-3 7a3 3 0 0 0 6 0z"/>',
+  ps: '<path d="M9 3.500h6v3H9z"/><path d="M9 5H6v16h12V5h-3"/><path d="M9 14l2 2 4-5"/>',
+  pp: '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/>'
+};
+const icono = (id) => '<svg viewBox="0 0 24 24" aria-hidden="true">' + ICONOS[id] + '</svg>';
+
+/* ============================================================================
+ * UTILIDADES
+ * ==========================================================================*/
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+function barajar(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+function calificar(correctas, total, umbral) {
+  const porcentaje = Math.round((correctas / total) * 100);
+  return { porcentaje, nota: (porcentaje / 20).toFixed(1).replace(".", ","), aprobado: porcentaje >= umbral };
+}
+function leer(clave, defecto) { try { const v = localStorage.getItem(clave); return v ? JSON.parse(v) : defecto; } catch (e) { return defecto; } }
+function guardar(clave, valor) { try { localStorage.setItem(clave, JSON.stringify(valor)); } catch (e) { /* sin almacenamiento */ } }
+function duracionTexto(seg) { const m = Math.floor(seg / 60), s = seg % 60; return (m ? m + " min " : "") + s + " s"; }
+
+const PANTALLAS = ["p-inicio", "p-temas", "p-quiz", "p-resultado"];
+function mostrar(id) {
+  PANTALLAS.forEach((p) => { $(p).hidden = p !== id; });
+  $("btn-participante").hidden = id !== "p-temas";
+  window.scrollTo(0, 0);
+}
+
+/* ============================================================================
+ * ESTADO
+ * ==========================================================================*/
+const estado = { persona: null, tema: null, preguntas: [], indice: 0, elegida: -1, respondida: false, hechas: [], inicio: 0, resultado: null };
+let historial = leer("hf-eval-historial", {});
+let sonido = leer("hf-eval-sonido", true);
+let timer = null, segundos = 0, segundosTotal = 0, audioCtx = null, descargas = null, salirArmado = false;
+
+/* ============================================================================
+ * 1. REGISTRO
+ * ==========================================================================*/
+function initInicio() {
+  $("sello").innerHTML = SELLO_SVG;
+  $("pills").innerHTML = [
+    TEMAS.length + " temas",
+    CFG.preguntasPorIntento + " preguntas por evaluación",
+    CFG.segundosPorPregunta + " s por pregunta",
+    "Aprueba con " + CFG.umbralAprobacion + " % o más"
+  ].map((t) => "<li>" + t + "</li>").join("");
+  $("pie").textContent = CFG.marca + " · " + CFG.lema + " · " + CFG.evaluador;
+
+  const previo = leer("hf-eval-persona", null);
+  if (previo) ["nombre", "documento", "cargo", "empresa"].forEach((k) => { $(k).value = previo[k] || ""; });
+
+  $("form-inicio").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const p = { nombre: $("nombre").value.trim().replace(/\s+/g, " "), documento: $("documento").value.trim(), cargo: $("cargo").value.trim(), empresa: $("empresa").value.trim() };
+    if (p.nombre.split(" ").length < 2 || p.nombre.length < 6) { $("error-inicio").textContent = "Escribe tu nombre completo: nombres y apellidos."; $("nombre").focus(); return; }
+    if (p.documento.length < 4) { $("error-inicio").textContent = "Escribe tu número de documento."; $("documento").focus(); return; }
+    $("error-inicio").textContent = "";
+    const anterior = leer("hf-eval-persona", null);
+    if (!anterior || anterior.documento !== p.documento) { historial = {}; guardar("hf-eval-historial", historial); }
+    estado.persona = p; guardar("hf-eval-persona", p);
+    abrirTemas();
+  });
+  $("btn-participante").addEventListener("click", () => mostrar("p-inicio"));
+}
+
+/* ============================================================================
+ * 2. SELECCIÓN DE TEMA
+ * ==========================================================================*/
+function abrirTemas() {
+  estado.tema = null;
+  $("saludo").textContent = estado.persona.nombre;
+  $("temas-lead").textContent = "Cada evaluación tiene " + CFG.preguntasPorIntento + " preguntas de selección múltiple con única respuesta. El cronómetro empieza al tocar «Comenzar».";
+  $("temas").innerHTML = TEMAS.map((t) => {
+    const h = historial[t.id];
+    const est = h ? '<span class="est ' + (h.aprobado ? "ok" : "no") + '">' + (h.aprobado ? "Aprobado" : "No aprobado") + " · " + h.porcentaje + " %</span>" : '<span class="est nu">Sin presentar</span>';
+    return '<button type="button" class="tema" data-id="' + t.id + '" aria-pressed="false"><span class="ico">' + icono(t.id) + "</span><b>" + esc(t.nombre) + '</b><span class="sub">' + esc(t.sub) + "</span>" + est + "</button>";
+  }).join("");
+  const btn = $("btn-comenzar"); btn.disabled = true; btn.textContent = "Elige un tema";
+  mostrar("p-temas");
+}
+function initTemas() {
+  $("temas").addEventListener("click", (e) => {
+    const b = e.target.closest(".tema"); if (!b) return;
+    document.querySelectorAll(".tema").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    estado.tema = TEMAS.find((t) => t.id === b.dataset.id);
+    const btn = $("btn-comenzar"); btn.disabled = false; btn.textContent = "Comenzar: " + estado.tema.nombre + " ▶";
+  });
+  $("btn-comenzar").addEventListener("click", () => { if (estado.tema) comenzar(); });
+}
+
+/* ============================================================================
+ * 3. EXAMEN
+ * ==========================================================================*/
+function armarExamen(tema, cantidad) {
+  return barajar(tema.preguntas).slice(0, Math.min(cantidad, tema.preguntas.length)).map((p) => ({
+    texto: p[0], explicacion: p[5], segundos: p[6] || CFG.segundosPorPregunta,
+    opciones: barajar([{ t: p[1], ok: true }, { t: p[2], ok: false }, { t: p[3], ok: false }, { t: p[4], ok: false }])
+  }));
+}
+function comenzar() {
+  getAudio(); // se activa con el toque del usuario
+  estado.preguntas = armarExamen(estado.tema, CFG.preguntasPorIntento);
+  estado.indice = 0; estado.hechas = []; estado.inicio = Date.now();
+  $("q-ico").innerHTML = icono(estado.tema.id);
+  $("q-tema").textContent = estado.tema.nombre;
+  desarmarSalir();
+  mostrar("p-quiz");
+  pintarPregunta();
+}
+function pintarPregunta() {
+  const p = estado.preguntas[estado.indice], total = estado.preguntas.length;
+  estado.elegida = -1; estado.respondida = false;
+  $("q-contador").textContent = "Pregunta " + (estado.indice + 1) + " de " + total;
+  $("q-barra").style.width = (estado.indice / total) * 100 + "%";
+  $("q-texto").textContent = p.texto;
+  $("q-retro").innerHTML = "";
+  $("q-ops").innerHTML = p.opciones.map((o, i) => '<button type="button" class="op" data-i="' + i + '"><span class="l">' + "ABCD"[i] + '</span><span class="t">' + esc(o.t) + "</span></button>").join("");
+  const btn = $("btn-resp"); btn.disabled = true; btn.textContent = "Responder";
+  iniciarCrono(p.segundos);
+}
+function responder(expiro) {
+  if (estado.respondida) return;
+  estado.respondida = true; detenerCrono();
+  const p = estado.preguntas[estado.indice];
+  const iOk = p.opciones.findIndex((o) => o.ok), acerto = estado.elegida === iOk;
+  document.querySelectorAll("#q-ops .op").forEach((b, i) => {
+    b.disabled = true; b.classList.remove("sel");
+    if (i === iOk) b.classList.add("ok"); else if (i === estado.elegida) b.classList.add("no");
+  });
+  estado.hechas.push({ texto: p.texto, elegida: estado.elegida < 0 ? null : p.opciones[estado.elegida].t, correcta: p.opciones[iOk].t, explicacion: p.explicacion, acerto, expiro: !!expiro && estado.elegida < 0 });
+  const titulo = acerto ? "Correcto" : (estado.elegida < 0 ? "Se acabó el tiempo" : "Incorrecto");
+  $("q-retro").innerHTML = '<div class="retro ' + (acerto ? "ok" : "no") + '"><b>' + titulo + "</b>" + esc(p.explicacion) + "</div>";
+  const btn = $("btn-resp"); btn.disabled = false;
+  btn.textContent = estado.indice === estado.preguntas.length - 1 ? "Ver resultado ✓" : "Siguiente ▶";
+  btn.focus();
+}
+function initQuiz() {
+  $("q-ops").addEventListener("click", (e) => {
+    const b = e.target.closest(".op"); if (!b || estado.respondida) return;
+    estado.elegida = Number(b.dataset.i);
+    document.querySelectorAll("#q-ops .op").forEach((x) => x.classList.toggle("sel", x === b));
+    $("btn-resp").disabled = false;
+  });
+  $("btn-resp").addEventListener("click", () => {
+    if (!estado.respondida) { responder(false); return; }
+    if (estado.indice < estado.preguntas.length - 1) { estado.indice++; pintarPregunta(); window.scrollTo(0, 0); } else finalizar();
+  });
+  $("btn-sonido").addEventListener("click", () => { sonido = !sonido; guardar("hf-eval-sonido", sonido); pintarSonido(); });
+  $("btn-salir").addEventListener("click", () => {
+    if (!salirArmado) { salirArmado = true; $("btn-salir").textContent = "¿Seguro? Toca otra vez para salir sin calificación"; return; }
+    detenerCrono(); abrirTemas();
+  });
+  pintarSonido();
+}
+function desarmarSalir() { salirArmado = false; $("btn-salir").textContent = "Abandonar evaluación"; }
+function pintarSonido() { $("btn-sonido").textContent = "Sonido: " + (sonido ? "activado" : "apagado"); }
+
+/* ---------- Cronómetro y sonido ---------- */
+function iniciarCrono(seg) {
+  detenerCrono(); segundos = segundosTotal = seg;
+  $("crono").classList.remove("alerta"); pintarCrono();
+  timer = setInterval(() => {
+    segundos--; pintarCrono();
+    if (segundos <= CFG.alertaSonoraDesde && segundos > 0) { $("crono").classList.add("alerta"); beep(880, 0.12); }
+    if (segundos <= 0) { beep(440, 0.5); responder(true); }
+  }, 1000);
+}
+function pintarCrono() { $("crono-num").textContent = segundos; $("crono-arco").style.strokeDashoffset = String(100 - (segundos / segundosTotal) * 100); }
+function detenerCrono() { if (timer) { clearInterval(timer); timer = null; } }
+function getAudio() {
+  if (!audioCtx) { try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return null; } }
+  if (audioCtx.state === "suspended") audioCtx.resume().catch(() => {});
+  return audioCtx;
+}
+function beep(freq, dur) {
+  if (!sonido) return; const ctx = getAudio(); if (!ctx) return;
+  const osc = ctx.createOscillator(), gain = ctx.createGain();
+  osc.type = "square"; osc.frequency.value = freq;
+  gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.2, ctx.currentTime + 0.01);
+  gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + dur);
+  osc.connect(gain).connect(ctx.destination); osc.start(); osc.stop(ctx.currentTime + dur + 0.02);
+}
+
+/* ============================================================================
+ * 4. RESULTADO, CONSTANCIA Y ENVÍO
+ * ==========================================================================*/
+function finalizar() {
+  const total = estado.preguntas.length, correctas = estado.hechas.filter((h) => h.acerto).length;
+  const sinResponder = estado.hechas.filter((h) => h.elegida === null).length;
+  const c = calificar(correctas, total, CFG.umbralAprobacion);
+  const ahora = new Date(), pad = (n) => String(n).padStart(2, "0");
+  const r = estado.resultado = Object.assign({}, estado.persona, c, {
+    tema: estado.tema.nombre, temaId: estado.tema.id, correctas, total, sinResponder,
+    duracion: duracionTexto(Math.round((Date.now() - estado.inicio) / 1000)),
+    fecha: ahora.toLocaleString("es-CO", { dateStyle: "long", timeStyle: "short" }),
+    codigo: "HF-" + estado.tema.id.toUpperCase() + "-" + ahora.getFullYear() + pad(ahora.getMonth() + 1) + pad(ahora.getDate()) + "-" + Math.random().toString(36).slice(2, 6).toUpperCase(),
+    veredicto: c.aprobado ? "APROBADO" : "NO APROBADO"
+  });
+  const previo = historial[r.temaId];
+  if (!previo || r.porcentaje >= previo.porcentaje) { historial[r.temaId] = { porcentaje: r.porcentaje, aprobado: r.aprobado }; guardar("hf-eval-historial", historial); }
+
+  $("res-insignia").className = "insignia " + (r.aprobado ? "ok" : "no");
+  $("res-insignia").textContent = r.aprobado ? "✓" : "✕";
+  $("res-titulo").className = r.aprobado ? "ok" : "no";
+  $("res-titulo").textContent = r.aprobado ? "¡APROBADO!" : "NO APROBADO";
+  $("res-detalle").textContent = r.nombre + " · " + r.tema + (r.aprobado ? "" : ". Repasa las respuestas y vuelve a presentar el tema.");
+  $("res-cifras").innerHTML = [[r.porcentaje + " %", "Calificación"], [r.nota + " / 5", "Nota"], [r.correctas + " de " + r.total, "Correctas"], [r.duracion, "Duración"]]
+    .map((x) => "<li><b>" + x[0] + "</b><span>" + x[1] + "</span></li>").join("");
+  $("res-rev").innerHTML = estado.hechas.map((h) =>
+    '<li class="' + (h.acerto ? "ok" : "no") + '"><p class="q">' + esc(h.texto) + "</p>"
+    + (h.acerto ? "" : '<p class="r">Tu respuesta: ' + (h.elegida === null ? "sin responder" : esc(h.elegida)) + "</p>")
+    + '<p class="c">Respuesta correcta: ' + esc(h.correcta) + '</p><p class="r">' + esc(h.explicacion) + "</p></li>").join("");
+  $("btn-wa").href = "https://wa.me/" + CFG.whatsapp + "?text=" + encodeURIComponent(mensaje(r));
+  $("estado-envio").textContent = "";
+  mostrar("p-resultado");
+  dibujarConstancia(r);
+}
+function mensaje(r) {
+  return ["*Evaluación de capacitación — " + CFG.marca + "*", "Tema: " + r.tema, "Participante: " + r.nombre, "Documento: " + r.documento,
+    r.cargo ? "Cargo: " + r.cargo : "", r.empresa ? "Empresa: " + r.empresa : "",
+    "Resultado: " + r.correctas + "/" + r.total + " (" + r.porcentaje + " %) · Nota " + r.nota + "/5", "Concepto: " + r.veredicto,
+    "Duración: " + r.duracion, "Fecha: " + r.fecha, "Código: " + r.codigo].filter(Boolean).join("\n");
+}
+
+/* ---------- Constancia en canvas ---------- */
+function dibujarConstancia(r) {
+  const cv = $("cert"), ctx = cv.getContext("2d"), W = cv.width, H = cv.height, cx = W / 2;
+  const color = r.aprobado ? "#2E7D32" : "#B3261E", ROJO = "#9E0B0B", ORO = "#C9A84C", TINTA = "#1C1614", GRIS = "#665B56";
+  const DISP = '"Archivo", Arial, sans-serif', SERIF = 'Georgia, "Times New Roman", serif';
+  function texto(t, y, px, col, fuente, peso, maxW) {
+    let s = px; ctx.fillStyle = col; ctx.textAlign = "center";
+    do { ctx.font = (peso || "400") + " " + s + "px " + fuente; s -= 2; } while (maxW && ctx.measureText(t).width > maxW && s > 14);
+    ctx.fillText(t, cx, y);
+  }
+  function pintar(sello) {
+    ctx.fillStyle = "#FFFFFF"; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = ORO; ctx.lineWidth = 14; ctx.strokeRect(28, 28, W - 56, H - 56);
+    ctx.strokeStyle = ROJO; ctx.lineWidth = 3; ctx.strokeRect(50, 50, W - 100, H - 100);
+    if (sello) ctx.drawImage(sello, cx - 75, 72, 150, 150);
+    texto(CFG.marca, 262, 30, ROJO, DISP, "800");
+    texto("CONSTANCIA DE EVALUACIÓN", 318, 50, TINTA, DISP, "800");
+    texto("Capacitación en inocuidad alimentaria", 354, 24, GRIS, DISP, "500");
+    texto("Se hace constar que", 412, 24, GRIS, DISP, "500");
+    texto(r.nombre, 468, 52, ROJO, SERIF, "700", W - 240);
+    texto(["Documento " + r.documento, r.cargo, r.empresa].filter(Boolean).join("   ·   "), 506, 22, GRIS, DISP, "500", W - 240);
+    texto("presentó la evaluación del tema", 560, 24, GRIS, DISP, "500");
+    texto(r.tema, 606, 40, TINTA, DISP, "700", W - 240);
+    texto("con " + r.correctas + " de " + r.total + " respuestas correctas", 648, 24, GRIS, DISP, "500");
+    texto(r.porcentaje + " %   ·   Nota " + r.nota + " / 5", 716, 54, color, DISP, "800");
+    const bw = 380, bh = 62, bx = cx - bw / 2, by = 742;
+    ctx.fillStyle = color; ctx.beginPath();
+    if (ctx.roundRect) ctx.roundRect(bx, by, bw, bh, 12); else ctx.rect(bx, by, bw, bh);
+    ctx.fill();
+    texto(r.veredicto, by + 44, 36, "#FFFFFF", DISP, "800");
+    texto(CFG.evaluador, 846, 22, TINTA, DISP, "700");
+    texto(CFG.cargoEvaluador, 871, 18, GRIS, DISP, "500");
+    texto(r.fecha + "   ·   Código " + r.codigo + "   ·   Aprobación desde " + CFG.umbralAprobacion + " %", 899, 17, GRIS, DISP, "500", W - 200);
+    texto("Acredita el resultado de la evaluación; no reemplaza el certificado de capacitación en manipulación de alimentos.", 921, 15, GRIS, DISP, "400", W - 200);
+    try { $("cert-img").src = cv.toDataURL("image/png"); } catch (e) { /* lienzo no exportable */ }
+  }
+  const listo = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+  listo.then(() => {
+    const img = new Image();
+    img.onload = () => pintar(img);
+    img.onerror = () => pintar(null);
+    img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(SELLO_SVG);
+  });
+}
+function descargarConstancia() {
+  const r = estado.resultado; if (!r) return;
+  const nombre = "Constancia_" + r.temaId.toUpperCase() + "_" + r.nombre.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Za-z0-9]+/g, "_") + ".png";
+  const aviso = $("estado-envio");
+  $("cert").toBlob((blob) => {
+    if (!blob) { aviso.textContent = "No se pudo generar el archivo. Mantén presionada la imagen para guardarla."; return; }
+    if (descargas) {
+      descargas.save({ filename: nombre, data: blob })
+        .then(() => { aviso.textContent = "Constancia guardada."; })
+        .catch((e) => { aviso.textContent = e && e.code === "declined" ? "Descarga cancelada." : "No se pudo descargar. Mantén presionada la imagen para guardarla."; });
+      return;
+    }
+    const url = URL.createObjectURL(blob), a = document.createElement("a");
+    a.href = url; a.download = nombre; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+  }, "image/png");
+}
+function initResultado() {
+  $("btn-descargar").addEventListener("click", descargarConstancia);
+  $("btn-otro").addEventListener("click", abrirTemas);
+  $("btn-repetir").addEventListener("click", comenzar);
+  if (window.claude && typeof window.claude.use === "function") {
+    window.claude.use("downloads").then((d) => { descargas = d; }).catch(() => {});
+  }
+}
+
+/* ---------- Arranque ---------- */
+if (typeof document !== "undefined") { initInicio(); initTemas(); initQuiz(); initResultado(); }
+</script>
+</body>
+</html>
